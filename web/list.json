@@ -1,0 +1,19 @@
+[
+  ["web", "Web"],
+  ["html", "HTML"],
+  ["css", "CSS"],
+  ["js", "JavaScript"],
+  ["jquery", "jQuery"],
+  ["nodejs", "Node.js"],
+  ["react", "React.js"],
+  ["next", "Next.js"],
+  ["netlify", "Netlify"],
+  ["vercel", "Vercel"],
+  ["java", "Java"],
+  ["spring", "Spring"],
+  ["python", "Python"],
+  ["django", "DJango"],
+  ["mysql", "MySQL"],
+  ["mongo", "MongoDB"],
+  ["postgre", "PostgreSQL"]
+]

@@ -1,15 +1,28 @@
 a {
   color: rgb(255, 0, 128);
   text-decoration: none;
-  font-weight: 900;
 
   &:visited {
-    color: rgb(128, 90, 90);
+    color: rgb(170, 72, 85);
   }
 
   &:hover {
     color: orangered;
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  a {
+    color: rgb(255, 96, 192);
+
+    &:visited {
+      color: rgb(188, 77, 211);
+    }
+  
+    &:hover {
+      color: rgb(96, 192, 255);
+    }
+  } 
 }
 
 h1 {
@@ -39,15 +52,17 @@ header {
 }
 
 nav {
-  border-right: 1px solid;
-
-  @media (max-width: 800px) {
-    border-right: 0;
-  }
+ position: sticky;
+ top: 0;
+ align-self: start;
 }
 
 ul {
   margin: 0;
+  padding: 20px;
+}
+
+main {
   padding: 20px;
 }
 

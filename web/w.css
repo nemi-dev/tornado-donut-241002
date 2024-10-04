@@ -1,0 +1,62 @@
+
+table.infobox, figure, div.tright, .sidebar {
+  float: right;
+  clear: right;
+  border: 1px solid;
+  margin: 8px;
+  padding: 8px;
+}
+
+figure {
+  display: table;
+  border-bottom: none;
+
+  & > figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    word-break: break-all;
+    border: 1px solid;
+    border-top: none;
+    padding: 8px;
+  }
+}
+
+table.infobox, .siedbar, .hlist {
+  width: 22em;
+
+  & img {
+    text-align: center;
+  }
+}
+
+.hlist {
+  text-align: center;
+  & ul {
+    font-size: 80%;
+    margin: 0;
+    padding: 0;
+    list-style-type: disc;
+    & ul {
+      display: inline;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  & li {
+    display: inline;
+    &::after {
+      content: " · ";
+      font-weight: bold;
+    }
+
+    & li:first-child::before {
+      content: " (";
+      font-weight: normal;
+    }
+
+    & li:last-child::after {
+      content: ") ";
+      font-weight: normal;
+    }
+  }
+}
