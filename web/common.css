@@ -1,3 +1,7 @@
+* {
+  outline: none;
+}
+
 html {
   color-scheme: light dark;
 }
