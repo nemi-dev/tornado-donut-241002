@@ -1,0 +1,16 @@
+div {
+  border: 10px solid green;
+  font-size: 36px;
+}
+
+@media screen and (min-width: 800px) {
+  .min {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .max {
+    display: none;
+  }
+}
