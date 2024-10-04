@@ -1,0 +1,60 @@
+html {
+    color-scheme: light dark;
+}
+
+body {
+    /* width: clamp(360px, 60vw, 1200px); */
+    /* margin: auto; */
+    /* margin: 0 auto; */
+    margin: 0;
+}
+
+a {
+    color: rgb(255, 0, 128);
+    text-decoration: none;
+    font-weight: 900;
+
+    &:visited {
+        color: rgb(128, 90, 90);
+    }
+
+    &:hover {
+        color: orangered;
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: 48px;
+    margin: 0;
+}
+
+
+#GridWrapper {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+}
+
+
+header {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    grid-column: 1 / -1;
+    position: relative;
+}
+
+nav {
+    border-right: 1px solid;
+}
+
+ul {
+    margin: 0;
+    padding: 20px;
+}
+
+.author {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 24px;
+}
