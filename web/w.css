@@ -1,10 +1,21 @@
-a:visited:not(:hover) {
-  color: rgb(170, 72, 85);
-  @media (prefers-color-scheme: dark) {
-    color: rgb(188, 77, 211);
-  }
+main {
+  width: clamp(200px, 60vw, 1000px);
+  margin: auto;
 }
 
+main a {
+  font-weight: 400;
+}
+
+main a:visited:not(:hover) {
+  color: rgb(17, 104, 175);
+}
+
+@media (prefers-color-scheme: dark) {
+  main a:visited:not(:hover) {
+    color: rgb(58, 153, 216);
+  }
+}
 
 table.infobox, figure, div.tright, .sidebar, .side-box-right {
   float: right;

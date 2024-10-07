@@ -1,18 +1,21 @@
 a {
-  color: rgb(255, 0, 128);
+  color: rgb(18, 177, 156);
   text-decoration: none;
+  transition: color 0.1s ease-in;
+
+  
 
   &:hover {
-    color: orangered;
+    color: rgb(162, 0, 255);
   }
 }
 
 @media (prefers-color-scheme: dark) {
   a {
-    color: rgb(255, 96, 192);
+    color: rgb(96, 255, 215);
 
     &:hover {
-      color: rgb(96, 192, 255);
+      color: rgb(204, 115, 255);
     }
   } 
 }
