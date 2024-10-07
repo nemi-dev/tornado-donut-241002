@@ -4,14 +4,14 @@ export const auth = new GoTrue({
   setCookie: true,
 })
 
+export const user = auth.currentUser()
+console.log(user)
+
 export function getFormJSON(form) {
   const formData = new FormData(form)
-  return Object.fromEntries(formData.entries())
-}
-
-export async function doLogin({ username, password }) {
-  const result = await auth.login(username, password, true)
-  return result
+  const obj = Object.fromEntries(formData.entries())
+  console.log(obj)
+  return obj
 }
 
 export async function doSignup({ username, password }) {

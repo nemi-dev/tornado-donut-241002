@@ -18,6 +18,8 @@
         <input autocomplete="off" id="username" name="username" type="text" placeholder="ID">
         <label for="password">Password</label>
         <input autocomplete="off" id="password" name="password" type="password" placeholder="Password">
+        <label for="remember">Remember Me</label>
+        <input type="checkbox" id="remember" name="remember">
         <input type="submit" id="MainChoice" value="LOGIN">
         <a href="./signup.html" id="Choice2">SIGNUP</a>
       </form>
@@ -25,23 +27,39 @@
   </div>
 </body>
 <script type="module">
-  import { getFormJSON, auth, doLogin } from './user.mjs'
+  import { getFormJSON, auth } from './user.mjs'
 
+  const user = auth.currentUser()
+
+  /** @type HTMLInputElement[] */
+  const username = document.getElementById("username")
+  const password = document.getElementById("password")
+  const mainChoice = document.querySelector("input#MainChoice")
+
+
+  async function doLogin(username, password, remember) {
+    const result = await auth.login(username, password, remember)
+    console.log(result)
+  }
+
+  if (user) {
+    username.setAttribute("disabled", true)
+    password.setAttribute("disabled", true)
+    username.value = "You're already logged in."
+    mainChoice.value = "LOGOUT"
+  } else {
+    mainChoice.addEventListener("click", e => {
+      const { username, password, remember = false } = getFormJSON(formEl)
+      doLogin(username, password, remember)
+    })
+  }
   /** @type HTMLFormElement */
   const formEl = document.querySelector("form");
   formEl.addEventListener("submit", e => {
     e.preventDefault()
   })
 
-  const doLoginInput = document.querySelector("input#MainChoice")
-  doLoginInput.addEventListener("click", e => {
-    doLogin(getFormJSON(formEl))
-  })
 
-  window.setInterval(() => {
-    const user = auth.currentUser();
-    console.log(user)
-  }, 5000)
   
 </script>
 </html>
