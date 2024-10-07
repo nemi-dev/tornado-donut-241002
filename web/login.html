@@ -47,6 +47,9 @@
     password.setAttribute("disabled", true)
     username.value = "You're already logged in."
     mainChoice.value = "LOGOUT"
+    mainChoice.addEventListener("click", e=> {
+      result.logout()
+    })
   } else {
     mainChoice.addEventListener("click", e => {
       const { username, password, remember = false } = getFormJSON(formEl)
