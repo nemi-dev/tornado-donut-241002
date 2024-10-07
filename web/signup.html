@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SIGNUP</title>
-  <link rel="stylesheet" href="./common.css">
-  <link rel="stylesheet" href="./p.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/p.css">
   <link rel="stylesheet" href="./login.css">
   <script src="./vendor/gotrue.js"></script>
 </head>
@@ -28,6 +28,11 @@
 </body>
 <script type="module">
   import { getFormJSON, auth, doSignup } from './user.mjs'
+
+  export async function doSignup({ username, password }) {
+    const result = await auth.signup(username, password)
+    return result
+  }
   /** @type HTMLFormElement */
   const formEl = document.querySelector("form");
   formEl.addEventListener("submit", e => {

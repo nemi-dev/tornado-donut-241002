@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LOGIN</title>
-  <link rel="stylesheet" href="./common.css">
-  <link rel="stylesheet" href="./p.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/p.css">
   <link rel="stylesheet" href="./login.css">
   <script src="./vendor/gotrue.js"></script>
 </head>
@@ -43,9 +43,6 @@
   }
 
   if (user) {
-    username.setAttribute("disabled", true)
-    password.setAttribute("disabled", true)
-    username.value = "You're already logged in."
     mainChoice.value = "LOGOUT"
     mainChoice.addEventListener("click", e=> {
       user.logout()

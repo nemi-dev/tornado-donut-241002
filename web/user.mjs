@@ -14,8 +14,23 @@ export function getFormJSON(form) {
   return obj
 }
 
-export async function doSignup({ username, password }) {
-  const result = await auth.signup(username, password)
-  return result
+/**
+ * @param {HTMLFormElement} form 
+ * @param {boolean} enable 
+ */
+export function setFormEnable(form, enable) {
+  const children = form.querySelectorAll("input")
+  if (enable) {
+    for (const el of children) {
+      if (el.type === "submit") continue
+      el.removeAttribute("disabled")
+    }
+  } else {
+    for (const el of children) {
+      if (el.type === "submit") continue
+      el.setAttribute("disabled", "")
+    }
+  }
+  
 }
 
