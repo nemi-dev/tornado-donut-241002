@@ -10,6 +10,7 @@
       "noscript",
       ".navbox-styles",
       ".mw-editsection",
+      ".mw-empty-elt",
       "[role=navigation]",
       "[role=note]",
       "[role=presentation]",
@@ -38,6 +39,19 @@
       }
       el.remove()
     })
+
+    const walker = document.createTreeWalker(main, NodeFilter.SHOW_ELEMENT)
+
+    while (walker.nextNode()) {
+      /** @type {Element} */
+      const el = walker.currentNode
+      const attrs = Array.from(el.attributes)
+      for (const attr of attrs) {
+        if (!attr.value) el.removeAttribute(attr.name)
+      }
+    }
+
+    main.prepend(main.querySelector(".printfooter"))
 
     return main.innerHTML
   }

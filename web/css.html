@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>WEB1 - CSS </title>
+  <title>CSS - WEB1</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./common.css">
@@ -123,15 +123,15 @@ Comparisons</th></tr><tr><td class="sidebar-content hlist">
 </p>
 <ul><li>all <a href="https://en.wikipedia.org/wiki/HTML_element" title="HTML element" target="_blank" rel="noreferrer noopener">elements</a> of a specific type, e.g. the second-level headers <a href="https://en.wikipedia.org/wiki/HTML_element#Basic_text" title="HTML element" target="_blank" rel="noreferrer noopener">h2</a></li>
 <li>elements specified by <a href="https://en.wikipedia.org/wiki/HTML_attribute" title="HTML attribute" target="_blank" rel="noreferrer noopener">attribute</a>, in particular:
-<ul><li><i>id</i>: an identifier unique within the document, denoted in the selector language by a <a href="https://en.wikipedia.org/wiki/Number_sign" title="Number sign" target="_blank" rel="noreferrer noopener">hash</a> prefix e.g. <code class="mw-highlight mw-highlight-lang-text mw-content-ltr" style="" dir="ltr">#id</code></li>
-<li><i>class</i>: an identifier that can annotate multiple elements in a document, denoted by a <a href="https://en.wikipedia.org/wiki/Period_(punctuation)" class="mw-redirect" title="Period (punctuation)" target="_blank" rel="noreferrer noopener">dot</a> prefix e.g. <code class="mw-highlight mw-highlight-lang-text mw-content-ltr" style="" dir="ltr">.classname</code> (the phrase "CSS class", although sometimes used, is a misnomer, as element classes—specified with the <a href="https://en.wikipedia.org/wiki/Class_attribute_(HTML)" class="mw-redirect" title="Class attribute (HTML)" target="_blank" rel="noreferrer noopener">HTML class attribute</a>—is a markup feature that is distinct from browsers' CSS subsystem and the related W3C/WHATWG standards work on document styles; see <a href="https://en.wikipedia.org/wiki/Resource_Description_Framework" title="Resource Description Framework" target="_blank" rel="noreferrer noopener">RDF</a> and <a href="https://en.wikipedia.org/wiki/Microformat" title="Microformat" target="_blank" rel="noreferrer noopener">microformats</a> for the origins of the "class" system of the Web content model)</li></ul></li>
+<ul><li><i>id</i>: an identifier unique within the document, denoted in the selector language by a <a href="https://en.wikipedia.org/wiki/Number_sign" title="Number sign" target="_blank" rel="noreferrer noopener">hash</a> prefix e.g. <code class="mw-highlight mw-highlight-lang-text mw-content-ltr" dir="ltr">#id</code></li>
+<li><i>class</i>: an identifier that can annotate multiple elements in a document, denoted by a <a href="https://en.wikipedia.org/wiki/Period_(punctuation)" class="mw-redirect" title="Period (punctuation)" target="_blank" rel="noreferrer noopener">dot</a> prefix e.g. <code class="mw-highlight mw-highlight-lang-text mw-content-ltr" dir="ltr">.classname</code> (the phrase "CSS class", although sometimes used, is a misnomer, as element classes—specified with the <a href="https://en.wikipedia.org/wiki/Class_attribute_(HTML)" class="mw-redirect" title="Class attribute (HTML)" target="_blank" rel="noreferrer noopener">HTML class attribute</a>—is a markup feature that is distinct from browsers' CSS subsystem and the related W3C/WHATWG standards work on document styles; see <a href="https://en.wikipedia.org/wiki/Resource_Description_Framework" title="Resource Description Framework" target="_blank" rel="noreferrer noopener">RDF</a> and <a href="https://en.wikipedia.org/wiki/Microformat" title="Microformat" target="_blank" rel="noreferrer noopener">microformats</a> for the origins of the "class" system of the Web content model)</li></ul></li>
 <li>elements depending on how they are placed relative to others in the <a href="https://en.wikipedia.org/wiki/Document_Object_Model" title="Document Object Model" target="_blank" rel="noreferrer noopener">document tree</a>.</li></ul>
 <p>Classes and IDs are case-sensitive, start with letters, and can include alphanumeric characters, hyphens, and underscores. A class may apply to any number of instances of any element. An ID may only be applied to a single element.
 </p>
 <div class="mw-heading mw-heading4"><h4 id="Pseudo-classes">Pseudo-classes</h4></div>
 <p><i>Pseudo-classes</i> are used in CSS selectors to permit formatting based on information that is not contained in the document tree. 
-</p><p>One example of a widely used pseudo-class is <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="p">:</span><span class="nd">hover</span></code>, which identifies content only when the user "points to" the visible element, usually by holding the mouse cursor over it. It is appended to a selector as in <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">a</span><span class="p">:</span><span class="nd">hover</span></code> or <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="p">#</span><span class="nn">elementid</span><span class="p">:</span><span class="nd">hover</span></code>. 
-</p><p>A pseudo-class classifies document elements, such as <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="p">:</span><span class="nd">link</span></code> or <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="p">:</span><span class="nd">visited</span></code>, whereas a <i>pseudo-element</i> makes a selection that may consist of partial elements, such as <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="p">::</span><span class="nd">first-line</span></code> or <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="p">::</span><span class="nd">first-letter</span></code>.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span class="cite-bracket">[</span>6<span class="cite-bracket">]</span></a></sup> Note the distinction between the double-colon notation used for pseudo-elements and the single-colon notation used for pseudo-classes.
+</p><p>One example of a widely used pseudo-class is <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="p">:</span><span class="nd">hover</span></code>, which identifies content only when the user "points to" the visible element, usually by holding the mouse cursor over it. It is appended to a selector as in <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">a</span><span class="p">:</span><span class="nd">hover</span></code> or <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="p">#</span><span class="nn">elementid</span><span class="p">:</span><span class="nd">hover</span></code>. 
+</p><p>A pseudo-class classifies document elements, such as <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="p">:</span><span class="nd">link</span></code> or <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="p">:</span><span class="nd">visited</span></code>, whereas a <i>pseudo-element</i> makes a selection that may consist of partial elements, such as <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="p">::</span><span class="nd">first-line</span></code> or <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="p">::</span><span class="nd">first-letter</span></code>.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span class="cite-bracket">[</span>6<span class="cite-bracket">]</span></a></sup> Note the distinction between the double-colon notation used for pseudo-elements and the single-colon notation used for pseudo-classes.
 </p>
 <div class="mw-heading mw-heading4"><h4 id="Combinators">Combinators</h4></div>
 <p>Multiple simple selectors may be joined using combinators to specify elements by location, element type, id, class, or any combination thereof.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span class="cite-bracket">[</span>7<span class="cite-bracket">]</span></a></sup> The order of the selectors is important. For example, <code class="nowrap mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">div</span><span class="w"> </span><span class="p">.</span><span class="nc">myClass</span><span class="w"> </span><span class="p">{</span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;}</span></code> applies to all elements of class myClass that are inside div elements, whereas <code class="nowrap mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="p">.</span><span class="nc">myClass</span><span class="w"> </span><span class="nt">div</span><span class="w"> </span><span class="p">{</span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;}</span></code> applies to all div elements that are inside elements of class myClass. This is not to be confused with concatenated identifiers such as <code class="nowrap mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">div</span><span class="p">.</span><span class="nc">myClass</span><span class="w"> </span><span class="p">{</span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;}</span></code> which applies to div elements of class myClass.
@@ -147,212 +147,212 @@ Comparisons</th></tr><tr><td class="sidebar-content hlist">
 <th>First defined<br>in CSS level
 </th></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span></code></td>
 <td>an element of type E</td>
 <td>1
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">link</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">link</span></code></td>
 <td>an E element that is the source anchor of a hyperlink whose target is either not yet visited (:link) or already visited (:visited)</td>
 <td>1
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">active</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">active</span></code></td>
 <td>an E element during certain user actions</td>
 <td>1
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">::</span><span class="nd">first-line</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">::</span><span class="nd">first-line</span></code></td>
 <td>the first formatted line of an E element</td>
 <td>1
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">::</span><span class="nd">first-letter</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">::</span><span class="nd">first-letter</span></code></td>
 <td>the first formatted letter of an E element</td>
 <td>1
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="p">.</span><span class="nc">c</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="p">.</span><span class="nc">c</span></code></td>
 <td>all elements with class="c"</td>
 <td>1
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="p">#</span><span class="nn">myid</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="p">#</span><span class="nn">myid</span></code></td>
 <td>the element with id="myid"</td>
 <td>1
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">.</span><span class="nc">warning</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">.</span><span class="nc">warning</span></code></td>
 <td>an E element whose class is "warning" (the document language specifies how class is determined)</td>
 <td>1
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">#</span><span class="nn">myid</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">#</span><span class="nn">myid</span></code></td>
 <td>an E element with ID equal to "myid"</td>
 <td>1
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="p">.</span><span class="nc">c</span><span class="p">#</span><span class="nn">myid</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="p">.</span><span class="nc">c</span><span class="p">#</span><span class="nn">myid</span></code></td>
 <td>the element with class="c" and ID equal to "myid"</td>
 <td>1
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="w"> </span><span class="nt">F</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="w"> </span><span class="nt">F</span></code></td>
 <td>an F element descendant of an E element</td>
 <td>1
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="o">*</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="o">*</span></code></td>
 <td>any element</td>
 <td>2
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="o">[</span><span class="nt">foo</span><span class="o">]</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="o">[</span><span class="nt">foo</span><span class="o">]</span></code></td>
 <td>an E element with a "foo" attribute</td>
 <td>2
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="o">[</span><span class="nt">foo</span><span class="o">=</span><span class="s2">"bar"</span><span class="o">]</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="o">[</span><span class="nt">foo</span><span class="o">=</span><span class="s2">"bar"</span><span class="o">]</span></code></td>
 <td>an E element whose "foo" attribute value is exactly equal to "bar"</td>
 <td>2
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="o">[</span><span class="nt">foo</span><span class="o">~=</span><span class="s2">"bar"</span><span class="o">]</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="o">[</span><span class="nt">foo</span><span class="o">~=</span><span class="s2">"bar"</span><span class="o">]</span></code></td>
 <td>an E element whose "foo" attribute value is a list of whitespace-separated values, one of which is exactly equal to "bar"</td>
 <td>2
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="o">[</span><span class="nt">foo</span><span class="o">|=</span><span class="s2">"en"</span><span class="o">]</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="o">[</span><span class="nt">foo</span><span class="o">|=</span><span class="s2">"en"</span><span class="o">]</span></code></td>
 <td>an E element whose "foo" attribute has a hyphen-separated list of values beginning (from the left) with "en"</td>
 <td>2
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">first-child</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">first-child</span></code></td>
 <td>an E element, first child of its parent</td>
 <td>2
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">lang</span><span class="o">(</span><span class="nt">fr</span><span class="o">)</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">lang</span><span class="o">(</span><span class="nt">fr</span><span class="o">)</span></code></td>
 <td>an element of type E in language "fr" (the document language specifies how language is determined)</td>
 <td>2
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">::</span><span class="nd">before</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">::</span><span class="nd">before</span></code></td>
 <td>generated content before an E element's content</td>
 <td>2
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">::</span><span class="nd">after</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">::</span><span class="nd">after</span></code></td>
 <td>generated content after an E element's content</td>
 <td>2
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">F</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">F</span></code></td>
 <td>an F element child of an E element</td>
 <td>2
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nt">F</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nt">F</span></code></td>
 <td>an F element immediately preceded by an E element</td>
 <td>2
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="o">[</span><span class="nt">foo</span><span class="o">^=</span><span class="s2">"bar"</span><span class="o">]</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="o">[</span><span class="nt">foo</span><span class="o">^=</span><span class="s2">"bar"</span><span class="o">]</span></code></td>
 <td>an E element whose "foo" attribute value begins exactly with the string "bar"</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="o">[</span><span class="nt">foo</span><span class="o">$=</span><span class="s2">"bar"</span><span class="o">]</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="o">[</span><span class="nt">foo</span><span class="o">$=</span><span class="s2">"bar"</span><span class="o">]</span></code></td>
 <td>an E element whose "foo" attribute value ends exactly with the string "bar"</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="o">[</span><span class="nt">foo</span><span class="o">*=</span><span class="s2">"bar"</span><span class="o">]</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="o">[</span><span class="nt">foo</span><span class="o">*=</span><span class="s2">"bar"</span><span class="o">]</span></code></td>
 <td>an E element whose "foo" attribute value contains the substring "bar"</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">root</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">root</span></code></td>
 <td>an E element, root of the document</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">n</span><span class="o">)</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">n</span><span class="o">)</span></code></td>
 <td>an E element, the n-th child of its parent</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">nth-last-child</span><span class="o">(</span><span class="nt">n</span><span class="o">)</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">nth-last-child</span><span class="o">(</span><span class="nt">n</span><span class="o">)</span></code></td>
 <td>an E element, the n-th child of its parent, counting from the last one</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">nth-of-type</span><span class="o">(</span><span class="nt">n</span><span class="o">)</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">nth-of-type</span><span class="o">(</span><span class="nt">n</span><span class="o">)</span></code></td>
 <td>an E element, the n-th sibling of its type</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">nth-last-of-type</span><span class="o">(</span><span class="nt">n</span><span class="o">)</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">nth-last-of-type</span><span class="o">(</span><span class="nt">n</span><span class="o">)</span></code></td>
 <td>an E element, the n-th sibling of its type, counting from the last one</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">last-child</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">last-child</span></code></td>
 <td>an E element, last child of its parent</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">first-of-type</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">first-of-type</span></code></td>
 <td>an E element, first sibling of its type</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">last-of-type</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">last-of-type</span></code></td>
 <td>an E element, last sibling of its type</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">only-child</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">only-child</span></code></td>
 <td>an E element, only child of its parent</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">only-of-type</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">only-of-type</span></code></td>
 <td>an E element, only sibling of its type</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">empty</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">empty</span></code></td>
 <td>an E element that has no children (including text nodes)</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">target</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">target</span></code></td>
 <td>an E element being the target of the referring URI</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">enabled</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">enabled</span></code></td>
 <td>a user interface element E that is enabled</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">disabled</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">disabled</span></code></td>
 <td>a user interface element E that is disabled</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">checked</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">checked</span></code></td>
 <td>a user interface element E that is checked (for instance a radio button or checkbox)</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">not</span><span class="o">(</span><span class="nt">s</span><span class="o">)</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="p">:</span><span class="nd">not</span><span class="o">(</span><span class="nt">s</span><span class="o">)</span></code></td>
 <td>an E element that does not match simple selector s</td>
 <td>3
 </td></tr>
 <tr>
-<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">E</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="nt">F</span></code></td>
+<td><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">E</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="nt">F</span></code></td>
 <td>an F element preceded by an E element</td>
 <td>3
 </td></tr></tbody></table>
@@ -366,8 +366,8 @@ Comparisons</th></tr><tr><td class="sidebar-content hlist">
 <p>Properties are specified in the CSS standard. Each property has a set of possible values. Some properties can affect any type of element, and others apply only to particular groups of elements.<sup id="cite_ref-11" class="reference"><a href="#cite_note-11"><span class="cite-bracket">[</span>11<span class="cite-bracket">]</span></a></sup><sup id="cite_ref-12" class="reference"><a href="#cite_note-12"><span class="cite-bracket">[</span>12<span class="cite-bracket">]</span></a></sup>
 </p>
 <div class="mw-heading mw-heading4"><h4 id="Values">Values</h4></div>
-<p>Values may be keywords, such as "center" or "inherit", or numerical values, such as <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">200px</span></code> (200 pixels), <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">50vw</span></code> (50 percent of the viewport width) or <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r886049734"><span class="monospaced">80%</span> (80 percent of the parent element's width).
-</p><p>Color values can be specified with keywords (e.g. "<code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">red</span></code>"), hexadecimal values (e.g. <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="p">#</span><span class="nn">FF0000</span></code>, also abbreviated as <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="p">#</span><span class="nn">F00</span></code>), RGB values on a 0 to 255 scale (e.g. <code><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">rgb</span><span class="o">(</span><span class="nt">255</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">)</span></code></code>), RGBA values that specify both color and alpha transparency (e.g. <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">rgba</span><span class="o">(</span><span class="nt">255</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">8</span><span class="o">)</span></code>), or HSL or HSLA values (e.g. <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">hsl</span><span class="o">(</span><span class="nt">0</span><span class="w"> </span><span class="nt">100</span><span class="o">%</span><span class="w"> </span><span class="nt">50</span><span class="o">%)</span></code>, <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">hsl</span><span class="o">(</span><span class="nt">0</span><span class="w"> </span><span class="nt">100</span><span class="o">%</span><span class="w"> </span><span class="nt">50</span><span class="o">%</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">8</span><span class="o">)</span></code>).<sup id="cite_ref-13" class="reference"><a href="#cite_note-13"><span class="cite-bracket">[</span>13<span class="cite-bracket">]</span></a></sup>
+<p>Values may be keywords, such as "center" or "inherit", or numerical values, such as <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">200px</span></code> (200 pixels), <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">50vw</span></code> (50 percent of the viewport width) or <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r886049734"><span class="monospaced">80%</span> (80 percent of the parent element's width).
+</p><p>Color values can be specified with keywords (e.g. "<code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">red</span></code>"), hexadecimal values (e.g. <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="p">#</span><span class="nn">FF0000</span></code>, also abbreviated as <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="p">#</span><span class="nn">F00</span></code>), RGB values on a 0 to 255 scale (e.g. <code><code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">rgb</span><span class="o">(</span><span class="nt">255</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">)</span></code></code>), RGBA values that specify both color and alpha transparency (e.g. <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">rgba</span><span class="o">(</span><span class="nt">255</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">8</span><span class="o">)</span></code>), or HSL or HSLA values (e.g. <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">hsl</span><span class="o">(</span><span class="nt">0</span><span class="w"> </span><span class="nt">100</span><span class="o">%</span><span class="w"> </span><span class="nt">50</span><span class="o">%)</span></code>, <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">hsl</span><span class="o">(</span><span class="nt">0</span><span class="w"> </span><span class="nt">100</span><span class="o">%</span><span class="w"> </span><span class="nt">50</span><span class="o">%</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">8</span><span class="o">)</span></code>).<sup id="cite_ref-13" class="reference"><a href="#cite_note-13"><span class="cite-bracket">[</span>13<span class="cite-bracket">]</span></a></sup>
 </p><p>Non-zero numeric values representing linear measures must include a length unit, which is either an alphabetic code or abbreviation, as in <code>200px</code> or <code>50vw</code>; or a percentage sign, as in <code>80%</code>. Some units – <code>cm</code> (<a href="https://en.wikipedia.org/wiki/Centimetre" title="Centimetre" target="_blank" rel="noreferrer noopener">centimetre</a>); <code>in</code> (<a href="https://en.wikipedia.org/wiki/Inch" title="Inch" target="_blank" rel="noreferrer noopener">inch</a>); <code>mm</code> (<a href="https://en.wikipedia.org/wiki/Millimetre" title="Millimetre" target="_blank" rel="noreferrer noopener">millimetre</a>); <code>pc</code> (<a href="https://en.wikipedia.org/wiki/Pica_(typography)" title="Pica (typography)" target="_blank" rel="noreferrer noopener">pica</a>); and <code>pt</code> (<a href="https://en.wikipedia.org/wiki/Point_(typography)" title="Point (typography)" target="_blank" rel="noreferrer noopener">point</a>) – are <i>absolute</i>, which means that the rendered dimension does not depend upon the structure of the page; others – <code>em</code> (<a href="https://en.wikipedia.org/wiki/Em_(typography)" title="Em (typography)" target="_blank" rel="noreferrer noopener">em</a>); <code>ex</code> (<a href="https://en.wikipedia.org/wiki/Ex_(typography)" class="mw-redirect" title="Ex (typography)" target="_blank" rel="noreferrer noopener">ex</a>) and <code>px</code> (<a href="https://en.wikipedia.org/wiki/Pixel" title="Pixel" target="_blank" rel="noreferrer noopener">pixel</a>)<sup class="noprint Inline-Template" style="margin-left:0.1em; white-space:nowrap;">[<i><a href="https://en.wikipedia.org/wiki/Wikipedia:Please_clarify" title="Wikipedia:Please clarify" target="_blank" rel="noreferrer noopener"><span title="This &quot;such as&quot; is carrying too much weight. The size of a px is relative not to the font size, but to screen resolution and viewing distance. Furthermore, in CSS 3 the &quot;px&quot; becomes the primordial absolute unit as the length units become anchored to it. (March 2022)">clarification needed</span></a></i>]</sup> – are <i>relative</i>, which means that factors such as the font size of a parent element can affect the rendered measurement. These eight units were a feature of CSS 1<sup id="cite_ref-14" class="reference"><a href="#cite_note-14"><span class="cite-bracket">[</span>14<span class="cite-bracket">]</span></a></sup> and retained in all subsequent revisions. The proposed CSS Values and Units Module Level 3 will, if adopted as a W3C Recommendation, provide seven further length units: <code>ch</code>; <code>Q</code>; <code>rem</code>; <code>vh</code>; <code>vmax</code>; <code>vmin</code>; and <code>vw</code>.<sup id="cite_ref-15" class="reference"><a href="#cite_note-15"><span class="cite-bracket">[</span>15<span class="cite-bracket">]</span></a></sup>
 </p>
 <div class="mw-heading mw-heading3"><h3 id="Use">Use</h3></div>
@@ -427,7 +427,7 @@ Comparisons</th></tr><tr><td class="sidebar-content hlist">
 <tr>
 <td>1</td>
 <td>Importance</td>
-<td>The "<code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="o">!</span><span class="nt">important</span></code>" annotation overwrites the previous priority types
+<td>The "<code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="o">!</span><span class="nt">important</span></code>" annotation overwrites the previous priority types
 </td></tr>
 <tr>
 <td>2</td>
@@ -447,7 +447,7 @@ Comparisons</th></tr><tr><td class="sidebar-content hlist">
 <tr>
 <td>5</td>
 <td>Selector specificity</td>
-<td>A specific contextual selector (<code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="p">#</span><span class="nn">heading</span><span class="w"> </span><span class="nt">p</span></code>) overwrites generic definition
+<td>A specific contextual selector (<code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="p">#</span><span class="nn">heading</span><span class="w"> </span><span class="nt">p</span></code>) overwrites generic definition
 </td></tr>
 <tr>
 <td>6</td>
@@ -609,14 +609,14 @@ In general, descendant elements inherit text-related properties, but their box-r
 <p>The item is <i>absolutely positioned</i> in a fixed position on the screen even as the rest of the document is scrolled<sup id="cite_ref-W3C-positioning_21-1" class="reference"><a href="#cite_note-W3C-positioning-21"><span class="cite-bracket">[</span>21<span class="cite-bracket">]</span></a></sup>
 </p>
 <div class="mw-heading mw-heading4"><h4 id="Float_and_clear">Float and clear</h4></div>
-<p>The <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">float</span></code> property may have one of three values. <i>Absolutely</i> positioned or <i>fixed</i> items cannot be floated. Other elements normally flow around floated items, unless they are prevented from doing so by their <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">clear</span></code> property.
+<p>The <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">float</span></code> property may have one of three values. <i>Absolutely</i> positioned or <i>fixed</i> items cannot be floated. Other elements normally flow around floated items, unless they are prevented from doing so by their <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">clear</span></code> property.
 </p>
 <dl><dt>left</dt>
 <dd>The item <i>floats</i> to the left of the line that it would have appeared in; other items may flow around its right side.</dd>
 <dt>right</dt>
 <dd>The item <i>floats</i> to the right of the line that it would have appeared in; other items may flow around its left side.</dd>
 <dt>clear</dt>
-<dd>Forces the element to appear underneath ('clear') floated elements to the left (<code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">clear</span><span class="p">:</span><span class="nd">left</span></code>), right (<code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">clear</span><span class="p">:</span><span class="nd">right</span></code>) or both sides (<code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="nt">clear</span><span class="p">:</span><span class="nd">both</span></code>).<sup id="cite_ref-W3C-positioning_21-2" class="reference"><a href="#cite_note-W3C-positioning-21"><span class="cite-bracket">[</span>21<span class="cite-bracket">]</span></a></sup><sup id="cite_ref-22" class="reference"><a href="#cite_note-22"><span class="cite-bracket">[</span>22<span class="cite-bracket">]</span></a></sup></dd></dl>
+<dd>Forces the element to appear underneath ('clear') floated elements to the left (<code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">clear</span><span class="p">:</span><span class="nd">left</span></code>), right (<code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">clear</span><span class="p">:</span><span class="nd">right</span></code>) or both sides (<code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="nt">clear</span><span class="p">:</span><span class="nd">both</span></code>).<sup id="cite_ref-W3C-positioning_21-2" class="reference"><a href="#cite_note-W3C-positioning-21"><span class="cite-bracket">[</span>21<span class="cite-bracket">]</span></a></sup><sup id="cite_ref-22" class="reference"><a href="#cite_note-22"><span class="cite-bracket">[</span>22<span class="cite-bracket">]</span></a></sup></dd></dl>
 <div class="mw-heading mw-heading2"><h2 id="History">History</h2></div>
 <figure class="mw-default-size mw-halign-right" typeof="mw:File/Thumb"><a href="https://en.wikipedia.org/wiki/File:H%C3%A5kon_Wium_Lie.jpg" class="mw-file-description" target="_blank" rel="noreferrer noopener"><img src="//upload.wikimedia.org/wikipedia/commons/thumb/5/54/H%C3%A5kon_Wium_Lie.jpg/170px-H%C3%A5kon_Wium_Lie.jpg" decoding="async" width="170" height="227" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/54/H%C3%A5kon_Wium_Lie.jpg/255px-H%C3%A5kon_Wium_Lie.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/54/H%C3%A5kon_Wium_Lie.jpg/340px-H%C3%A5kon_Wium_Lie.jpg 2x" data-file-width="1920" data-file-height="2560"></a><figcaption><a href="https://en.wikipedia.org/wiki/H%C3%A5kon_Wium_Lie" title="Håkon Wium Lie" target="_blank" rel="noreferrer noopener">Håkon Wium Lie</a>, chief technical officer of the Opera Software company and co-creator of the CSS web standards</figcaption></figure>
 <p>CSS was first proposed by <a href="https://en.wikipedia.org/wiki/H%C3%A5kon_Wium_Lie" title="Håkon Wium Lie" target="_blank" rel="noreferrer noopener">Håkon Wium Lie</a> on 10 October 1994.<sup id="cite_ref-chss-proposal_23-0" class="reference"><a href="#cite_note-chss-proposal-23"><span class="cite-bracket">[</span>23<span class="cite-bracket">]</span></a></sup> At the time, Lie was working with <a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee" title="Tim Berners-Lee" target="_blank" rel="noreferrer noopener">Tim Berners-Lee</a> at <a href="https://en.wikipedia.org/wiki/CERN" title="CERN" target="_blank" rel="noreferrer noopener">CERN</a>.<sup id="cite_ref-chapter20_24-0" class="reference"><a href="#cite_note-chapter20-24"><span class="cite-bracket">[</span>24<span class="cite-bracket">]</span></a></sup> Several other style sheet languages for the web were proposed around the same time, and discussions on public mailing lists and inside <a href="https://en.wikipedia.org/wiki/World_Wide_Web_Consortium" title="World Wide Web Consortium" target="_blank" rel="noreferrer noopener">World Wide Web Consortium</a> resulted in the first W3C CSS Recommendation (CSS1)<sup id="cite_ref-w3c-css1_25-0" class="reference"><a href="#cite_note-w3c-css1-25"><span class="cite-bracket">[</span>25<span class="cite-bracket">]</span></a></sup> being released in 1996. In particular, a proposal by <a href="https://en.wikipedia.org/wiki/Bert_Bos" title="Bert Bos" target="_blank" rel="noreferrer noopener">Bert Bos</a> was influential; he became co-author of CSS1, and is regarded as co-creator of CSS.<sup id="cite_ref-WWW3_26-0" class="reference"><a href="#cite_note-WWW3-26"><span class="cite-bracket">[</span>26<span class="cite-bracket">]</span></a></sup>
@@ -830,7 +830,7 @@ so some web servers served all <code>.css</code><sup id="cite_ref-38" class="ref
 <p>Scoping rules for properties such as z-index look for the closest parent element with a position: absolute or position: relative attribute. This odd coupling has undesired effects. For example, it is impossible to avoid declaring a new scope when one is forced to adjust an element's position, preventing one from using the desired scope of a parent element.
 </p>
 <div class="mw-heading mw-heading3"><h3 id="Pseudo-class_dynamic_behavior_not_controllable">Pseudo-class dynamic behavior not controllable</h3></div>
-<p>CSS implements pseudo-classes that allow a degree of user feedback by conditional application of alternate styles. One CSS pseudo-class, "<code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="p">:</span><span class="nd">hover</span></code>", is dynamic (equivalent of JavaScript "onmouseover") and has potential for misuse (e.g., implementing cursor-proximity popups),<sup id="cite_ref-67" class="reference"><a href="#cite_note-67"><span class="cite-bracket">[</span>67<span class="cite-bracket">]</span></a></sup> but CSS has no ability for a client to disable it (no "disable"-like property) or limit its effects (no "nochange"-like values for each property).
+<p>CSS implements pseudo-classes that allow a degree of user feedback by conditional application of alternate styles. One CSS pseudo-class, "<code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="p">:</span><span class="nd">hover</span></code>", is dynamic (equivalent of JavaScript "onmouseover") and has potential for misuse (e.g., implementing cursor-proximity popups),<sup id="cite_ref-67" class="reference"><a href="#cite_note-67"><span class="cite-bracket">[</span>67<span class="cite-bracket">]</span></a></sup> but CSS has no ability for a client to disable it (no "disable"-like property) or limit its effects (no "nochange"-like values for each property).
 </p>
 <div class="mw-heading mw-heading3"><h3 id="Cannot_name_rules">Cannot name rules</h3></div>
 <p>There is no way to name a CSS rule, which would allow (for example) client-side scripts to refer to the rule even if its selector changes.
@@ -839,7 +839,7 @@ so some web servers served all <code>.css</code><sup id="cite_ref-38" class="ref
 <p>CSS styles often must be duplicated in several rules to achieve the desired effect, causing additional maintenance and requiring more thorough testing. Some new CSS features were proposed to solve this but were abandoned afterward.<sup id="cite_ref-68" class="reference"><a href="#cite_note-68"><span class="cite-bracket">[</span>68<span class="cite-bracket">]</span></a></sup><sup id="cite_ref-69" class="reference"><a href="#cite_note-69"><span class="cite-bracket">[</span>69<span class="cite-bracket">]</span></a></sup> Instead, authors may gain this ability by using more sophisticated stylesheet languages which compile to CSS, such as <a href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)" class="mw-redirect" title="Sass (stylesheet language)" target="_blank" rel="noreferrer noopener">Sass</a>, <a href="https://en.wikipedia.org/wiki/Less_(stylesheet_language)" class="mw-redirect" title="Less (stylesheet language)" target="_blank" rel="noreferrer noopener">Less</a>, or <a href="https://en.wikipedia.org/wiki/Stylus_(stylesheet_language)" class="mw-redirect" title="Stylus (stylesheet language)" target="_blank" rel="noreferrer noopener">Stylus</a>.
 </p>
 <div class="mw-heading mw-heading3"><h3 id="Cannot_target_specific_text_without_altering_markup">Cannot target specific text without altering markup</h3></div>
-<p>Besides the <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" style="" dir="ltr"><span class="p">:</span><span class="nd">first-letter</span></code> pseudo-element, one cannot target specific ranges of text without needing to utilize placeholder elements.
+<p>Besides the <code class="mw-highlight mw-highlight-lang-css mw-content-ltr" dir="ltr"><span class="p">:</span><span class="nd">first-letter</span></code> pseudo-element, one cannot target specific ranges of text without needing to utilize placeholder elements.
 </p>
 <div class="mw-heading mw-heading2"><h2 id="Advantages">Advantages</h2></div>
 <div class="mw-heading mw-heading3"><h3 id="Separation_of_content_from_presentation">Separation of content from presentation</h3></div>
@@ -864,7 +864,7 @@ so some web servers served all <code>.css</code><sup id="cite_ref-38" class="ref
 <div class="mw-heading mw-heading2"><h2 id="Standardization">Standardization</h2></div>
 <div class="mw-heading mw-heading3"><h3 id="Frameworks">Frameworks</h3></div>
 <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1236090951"><div role="note" class="hatnote navigation-not-searchable">Main article: <a href="https://en.wikipedia.org/wiki/CSS_framework" title="CSS framework" target="_blank" rel="noreferrer noopener">CSS framework</a></div>
-<p><a href="https://en.wikipedia.org/wiki/CSS_framework" title="CSS framework" target="_blank" rel="noreferrer noopener">CSS frameworks</a> are prepared <a href="https://en.wikipedia.org/wiki/Library_(computing)" title="Library (computing)" target="_blank" rel="noreferrer noopener">libraries</a> that are meant to allow for easier, more standards-compliant styling of <a href="https://en.wikipedia.org/wiki/Web_page" title="Web page" target="_blank" rel="noreferrer noopener">web pages</a> using the Cascading Style Sheets language. CSS frameworks include <a href="https://en.wikipedia.org/wiki/Blueprint_(CSS_framework)" title="Blueprint (CSS framework)" target="_blank" rel="noreferrer noopener">Blueprint</a>, <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" title="Bootstrap (front-end framework)" target="_blank" rel="noreferrer noopener">Bootstrap</a>, <a href="https://en.wikipedia.org/wiki/Foundation_(framework)" title="Foundation (framework)" target="_blank" rel="noreferrer noopener">Foundation</a> and Materialize. Like programming and scripting language libraries, CSS frameworks are usually incorporated as external .css sheets referenced in the HTML <code class="mw-highlight mw-highlight-lang-html mw-content-ltr" style="" dir="ltr"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span></code>. They provide a number of ready-made options for designing and laying out the web page. Although many of these frameworks have been published, some authors use them mostly for rapid prototyping, or for learning from, and prefer to 'handcraft' CSS that is appropriate to each published site without the design, maintenance and download overhead of having many unused features in the site's styling.<sup id="cite_ref-70" class="reference"><a href="#cite_note-70"><span class="cite-bracket">[</span>70<span class="cite-bracket">]</span></a></sup>
+<p><a href="https://en.wikipedia.org/wiki/CSS_framework" title="CSS framework" target="_blank" rel="noreferrer noopener">CSS frameworks</a> are prepared <a href="https://en.wikipedia.org/wiki/Library_(computing)" title="Library (computing)" target="_blank" rel="noreferrer noopener">libraries</a> that are meant to allow for easier, more standards-compliant styling of <a href="https://en.wikipedia.org/wiki/Web_page" title="Web page" target="_blank" rel="noreferrer noopener">web pages</a> using the Cascading Style Sheets language. CSS frameworks include <a href="https://en.wikipedia.org/wiki/Blueprint_(CSS_framework)" title="Blueprint (CSS framework)" target="_blank" rel="noreferrer noopener">Blueprint</a>, <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" title="Bootstrap (front-end framework)" target="_blank" rel="noreferrer noopener">Bootstrap</a>, <a href="https://en.wikipedia.org/wiki/Foundation_(framework)" title="Foundation (framework)" target="_blank" rel="noreferrer noopener">Foundation</a> and Materialize. Like programming and scripting language libraries, CSS frameworks are usually incorporated as external .css sheets referenced in the HTML <code class="mw-highlight mw-highlight-lang-html mw-content-ltr" dir="ltr"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span></code>. They provide a number of ready-made options for designing and laying out the web page. Although many of these frameworks have been published, some authors use them mostly for rapid prototyping, or for learning from, and prefer to 'handcraft' CSS that is appropriate to each published site without the design, maintenance and download overhead of having many unused features in the site's styling.<sup id="cite_ref-70" class="reference"><a href="#cite_note-70"><span class="cite-bracket">[</span>70<span class="cite-bracket">]</span></a></sup>
 </p>
 <div class="mw-heading mw-heading4"><h4 id="Blueprint">Blueprint</h4></div>
 <div class="excerpt-block"><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1236090951"><div role="note" class="hatnote navigation-not-searchable dablink excerpt-hat selfref">This paragraph is an excerpt from <a href="https://en.wikipedia.org/wiki/Blueprint_(CSS_framework)" title="Blueprint (CSS framework)" target="_blank" rel="noreferrer noopener">Blueprint (CSS framework)</a>.<span class="mw-editsection-like plainlinks"><span class="mw-editsection-bracket">[</span><a class="external text" href="https://en.wikipedia.org/w/index.php?title=Blueprint_(CSS_framework)&amp;action=edit" target="_blank" rel="noreferrer noopener">edit</a><span class="mw-editsection-bracket">]</span></span></div><div class="excerpt">
@@ -1038,48 +1038,7 @@ so some web servers served all <code>.css</code><sup id="cite_ref-38" class="ref
 <div class="mw-heading mw-heading2"><h2 id="External_links">External links</h2></div>
 
 <ul><li><span class="official-website"><span class="url"><a rel="noreferrer noopener" class="external text" href="https://www.w3.org/Style/CSS/" target="_blank">Official website</a></span></span> <span class="mw-valign-text-top" typeof="mw:File/Frameless"><a href="https://www.wikidata.org/wiki/Q46441#P856" title="Edit this at Wikidata" target="_blank" rel="noreferrer noopener"><img alt="Edit this at Wikidata" src="//upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/10px-OOjs_UI_icon_edit-ltr-progressive.svg.png" decoding="async" width="10" height="10" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/15px-OOjs_UI_icon_edit-ltr-progressive.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png 2x" data-file-width="20" data-file-height="20"></a></span></li></ul>
-
-
-
-
-
-<!-- 
-NewPP limit report
-Parsed by mw‐api‐int.codfw.main‐76b7bb9c9‐l7vpx
-Cached time: 20241006020040
-Cache expiry: 2592000
-Reduced expiry: false
-Complications: [vary‐revision‐sha1, show‐toc]
-CPU time usage: 1.503 seconds
-Real time usage: 2.002 seconds
-Preprocessor visited node count: 8271/1000000
-Post‐expand include size: 275231/2097152 bytes
-Template argument size: 6410/2097152 bytes
-Highest expansion depth: 24/100
-Expensive parser function count: 125/500
-Unstrip recursion depth: 1/20
-Unstrip post‐expand size: 330422/5000000 bytes
-Lua time usage: 0.908/10.000 seconds
-Lua memory usage: 8509118/52428800 bytes
-Number of Wikibase entities loaded: 1/400
--->
-<!--
-Transclusion expansion time report (%,ms,calls,template)
-100.00% 1590.719      1 -total
- 31.28%  497.583      1 Template:Reflist
- 23.12%  367.828     57 Template:Cite_web
- 13.27%  211.109      3 Template:Excerpt
-  7.36%  117.148      2 Template:Sidebar
-  7.33%  116.648      1 Template:CSS
-  6.05%   96.266      1 Template:Short_description
-  5.05%   80.377      1 Template:Infobox_file_format
-  4.80%   76.407      1 Template:Infobox
-  4.78%   76.017      1 Template:Sisterlinks
--->
-
-<!-- Saved in parser cache with key enwiki:pcache:idhash:23290197-0!canonical and timestamp 20241006020040 and revision id 1248164982. Rendering was triggered because: api-parse
- -->
-</div><!--esi <esi:include src="/esitest-fa8a495983347898/content" /> --><noscript><img src="https://login.wikimedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" width="1" height="1" style="border: none; position: absolute;"></noscript>
+</div>
 </main>
   </div>
 </body>
