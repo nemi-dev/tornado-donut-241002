@@ -6,59 +6,8 @@
   <title>LOGIN</title>
   <link rel="stylesheet" href="./common.css">
   <link rel="stylesheet" href="./p.css">
+  <link rel="stylesheet" href="./login.css">
   <script src="./vendor/gotrue.js"></script>
-  <style>
-    .CenterWrapper {
-      width: 100vw;
-      height: 100vh;
-    }
-    .Card {
-      box-shadow: 0 3px 5px black;
-      padding: 24px;
-      border-radius: 10px;
-    }
-    .Form {
-      display: flex;
-      flex-direction: column;
-    }
-    label[for] {
-      margin: 8px 0;
-      margin-bottom: 0;
-      font-weight: 900;
-    }
-    label[for] + :is(input[type=text], input[type=password]) {
-      margin: 8px 0;
-      appearance: none;
-      margin-top: 0;
-      --glow-color: white;
-    }
-    input, button, #DoSignup {
-      display: block;
-      font-weight: 900;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    form[method=post] :is(input[type=text], input[type=password]) {
-      border: 1px solid #ffffff40;
-      font-size: 1.3rem;
-      border-radius: 8px;
-      padding: 4px;
-
-      &:focus {
-        box-shadow: 0 0 5px var(--glow-color);
-      }
-    }
-    input[type=submit], button, #DoSignup {
-      appearance: none;
-      border: 0;
-      margin: 8px 0;
-      padding: 14px;
-      font-size: 1.5rem;
-      border-radius: 8px;
-      cursor: pointer;
-      text-align: center;
-    }
-  </style>
 </head>
 <body>
   <div class="CenterWrapper">
@@ -69,36 +18,24 @@
         <input autocomplete="off" id="username" name="username" type="text" placeholder="ID">
         <label for="password">Password</label>
         <input autocomplete="off" id="password" name="password" type="password" placeholder="Password">
-        <input type="submit" id="DoLogin" value="LOGIN">
-        <a href="./signup.html" id="DoSignup">SIGNUP</a>
+        <input type="submit" id="MainChoice" value="LOGIN">
+        <a href="./signup.html" id="Choice2">SIGNUP</a>
       </form>
     </div>
   </div>
 </body>
-<script>
-  const auth = new GoTrue({
-    APIUrl: 'https://tornado-donut.netlify.app/.netlify/identity',
-    audience: '',
-    setCookie: false,
-  });
-
-  async function doLogin({username, password}) {
-    const result = await auth.login(username, password, false)
-    console.log(result)
-  }
+<script type="module">
+  import { getFormJSON, auth, doLogin } from './user.mjs'
 
   /** @type HTMLFormElement */
-  const form = document.querySelector("form");
-  form.addEventListener("submit", e => {
+  const formEl = document.querySelector("form");
+  formEl.addEventListener("submit", e => {
     e.preventDefault()
   })
 
-  const doLoginInput = document.querySelector("input#DoLogin")
+  const doLoginInput = document.querySelector("input#MainChoice")
   doLoginInput.addEventListener("click", e => {
-    const formData = new FormData(form)
-    const realFormData = Object.fromEntries(formData.entries())
-    doLogin(realFormData)
-    // console.log(realFormData)
+    doLogin(getFormJSON(formEl))
   })
 
   window.setInterval(() => {
