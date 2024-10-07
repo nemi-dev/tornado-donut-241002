@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  <link rel="stylesheet" href="./common.css">
+  <link rel="stylesheet" href="./p.css">
+  <style>
+    .CenterWrapper {
+      width: 100vw;
+      height: 100vh;
+    }
+    .Card {
+      box-shadow: 0 3px 5px black;
+      padding: 24px;
+      border-radius: 10px;
+    }
+    .Form {
+      display: flex;
+      flex-direction: column;
+    }
+    label[for] {
+      margin: 8px 32px;
+      margin-bottom: 0;
+    }
+    label[for] + :is(input[type=text], input[type=password]) {
+      margin: 8px 32px;
+      appearance: none;
+      margin-top: 0;
+      --glow-color: white;
+    }
+    form[method=post] :is(input[type=text], input[type=password]) {
+      border: 1px solid #ffffff40;
+      font-size: 1.3rem;
+      font-weight: 900;
+      border-radius: 8px;
+      padding: 4px;
+
+      &:focus {
+        box-shadow: 0 0 5px var(--glow-color);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="CenterWrapper">
+    <div class="Card">
+      <h1>LOGIN</h1>
+      <form class="Form" action="" method="post">
+        <label for="username">ID</label>
+        <input name="username" type="text" placeholder="ID">
+        <label for="password">Password</label>
+        <input name="password" type="password" placeholder="Password">
+        <input type="submit" id="DoLogin" value="LOGIN!">
+      </form>
+    </div>
+  </div>
+</body>
+<script>
+  /** @type HTMLFormElement */
+  const form = document.querySelector("form");
+  form.addEventListener("submit", e => {
+    e.preventDefault()
+  })
+  const doLogin = document.querySelector("input#DoLogin")
+  doLogin.addEventListener("click", e => {
+    const formData = new FormData(form)
+    const realFormData = Object.fromEntries(formData.entries())
+    console.log(realFormData)
+    
+  })
+</script>
+</html>
