@@ -5,8 +5,16 @@
     /** @type {HTMLElement} */
     const main = mainSource.cloneNode(true)
 
-    Array.from(main.querySelectorAll("style")).forEach(el => el.remove())
-    Array.from(main.querySelectorAll("[role=navigation], .navbox-styles")).forEach(el => el.remove())
+    const selectToRemove = [
+      "style",
+      "noscript",
+      ".navbox-styles",
+      ".mw-editsection",
+      "[role=navigation]",
+      "[role=note]",
+      "[role=presentation]",
+    ]
+    Array.from(main.querySelectorAll(selectToRemove.join(", "))).forEach(el => el.remove())
 
     Array.from(main.querySelectorAll("a")).forEach(a => {
       const hrefAttr = a.getAttribute("href")
@@ -15,6 +23,20 @@
         a.setAttribute("target", "_blank")
         a.setAttribute("rel", "noreferrer noopener")
       }
+    })
+
+    Array.from(main.querySelectorAll("pre")).forEach(pre => {
+      const newPre = document.createElement("pre")
+      newPre.append(pre.innerText)
+      pre.parentNode.insertBefore(newPre, pre)
+      pre.remove()
+    })
+
+    Array.from(main.querySelectorAll(".mw-heading")).forEach(el => {
+      while (el.firstElementChild) {
+        el.parentNode.insertBefore(el.firstElementChild, el.nextSibling)
+      }
+      el.remove()
     })
 
     return main.innerHTML

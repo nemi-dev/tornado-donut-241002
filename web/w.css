@@ -1,5 +1,12 @@
+a:visited:not(:hover) {
+  color: rgb(170, 72, 85);
+  @media (prefers-color-scheme: dark) {
+    color: rgb(188, 77, 211);
+  }
+}
 
-table.infobox, figure, div.tright, .sidebar {
+
+table.infobox, figure, div.tright, .sidebar, .side-box-right {
   float: right;
   clear: right;
   border: 1px solid;
@@ -59,4 +66,13 @@ table.infobox, .siedbar, .hlist {
       font-weight: normal;
     }
   }
+}
+
+.side-box-right {
+  width: 240px;
+}
+
+.side-box-flex {
+  display: flex;
+  align-items: center;
 }
