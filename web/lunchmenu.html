@@ -6,19 +6,28 @@
   <title>LunchMenu</title>
   <link rel="stylesheet" href="/css/common.css">
   <link rel="stylesheet" href="/css/p.css">
+  <style>
+    html body ul {
+      padding: 0;
+      padding-inline-start: 40px;
+    }
+  </style>
 </head>
 <body>
   <h1>오늘 뭐 먹을래?</h1>
-  <form action="" id="Form">
-    <label for="MainInput">나의 메뉴는:</label>
-    <input type="text" name="MainInput" id="MainInput">
-    <input type="submit" id="SubmitInput" hidden>
-  </form>
-  <ul></ul>
+  <ul id="RealList"></ul>
+  <ul>
+    <li>
+      <form action="" id="Form">
+        <input type="text" name="MainInput" id="MainInput">
+        <input type="submit" id="SubmitInput" hidden>
+      </form>
+    </li>
+  </ul>
 </body>
 <script>
   const input = document.querySelector("#MainInput")
-  const ul = document.querySelector("ul")
+  const ul = document.querySelector("#RealList")
   function addList(name) {
     if (!name) return
     const li = document.createElement("li")
