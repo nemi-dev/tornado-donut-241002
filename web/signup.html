@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LOGIN</title>
+  <title>SIGNUP</title>
   <link rel="stylesheet" href="./common.css">
   <link rel="stylesheet" href="./p.css">
   <script src="./vendor/gotrue.js"></script>
@@ -32,7 +32,7 @@
       margin-top: 0;
       --glow-color: white;
     }
-    input, button, #DoSignup {
+    input, button, #DoLogin {
       display: block;
       font-weight: 900;
       width: 100%;
@@ -48,7 +48,7 @@
         box-shadow: 0 0 5px var(--glow-color);
       }
     }
-    input[type=submit], button, #DoSignup {
+    input[type=submit], button, #DoLogin {
       appearance: none;
       border: 0;
       margin: 8px 0;
@@ -63,14 +63,16 @@
 <body>
   <div class="CenterWrapper">
     <div class="Card">
-      <h1>LOGIN</h1>
+      <h1>SIGNUP</h1>
       <form class="Form" action="" method="post">
         <label for="username">ID</label>
         <input autocomplete="off" id="username" name="username" type="text" placeholder="ID">
         <label for="password">Password</label>
         <input autocomplete="off" id="password" name="password" type="password" placeholder="Password">
-        <input type="submit" id="DoLogin" value="LOGIN">
-        <a href="./signup.html" id="DoSignup">SIGNUP</a>
+        <label for="confirm">Password</label>
+        <input autocomplete="off" id="confirm" name="confirm" type="password" placeholder="Password confirm">
+        <input type="submit" id="DoSignup" value="SIGNUP">
+        <a href="./login.html" id="DoLogin">Back to Login</a>
       </form>
     </div>
   </div>
@@ -82,29 +84,28 @@
     setCookie: false,
   });
 
-  async function doLogin({username, password}) {
-    const result = await auth.login(username, password, false)
-    console.log(result)
-  }
-
   /** @type HTMLFormElement */
   const form = document.querySelector("form");
   form.addEventListener("submit", e => {
     e.preventDefault()
   })
 
-  const doLoginInput = document.querySelector("input#DoLogin")
-  doLoginInput.addEventListener("click", e => {
+  const doSignupInput = document.querySelector("input#DoSignup")
+
+  async function doSignup({ username, password }) {
+    const result = await auth.signup(username, password)
+    console.log(result)
+  }
+  doSignupInput.addEventListener("click", e => {
     const formData = new FormData(form)
     const realFormData = Object.fromEntries(formData.entries())
-    doLogin(realFormData)
-    // console.log(realFormData)
+    const { username, password, confirm } = realFormData
+    if (password != confirm) {
+      return window.alert("Password doesn't match!")
+    }
+    doSignup(realFormData)
   })
 
-  !(async () => {
-    const user = auth.currentUser();
-    console.log(user)
-  })()
-  
+
 </script>
 </html>
