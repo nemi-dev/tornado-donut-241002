@@ -101,10 +101,10 @@
     // console.log(realFormData)
   })
 
-  !(async () => {
+  window.setInterval(() => {
     const user = auth.currentUser();
     console.log(user)
-  })()
+  }, 5000)
   
 </script>
 </html>
