@@ -48,7 +48,8 @@
     username.value = "You're already logged in."
     mainChoice.value = "LOGOUT"
     mainChoice.addEventListener("click", e=> {
-      result.logout()
+      user.logout()
+      location.reload()
     })
   } else {
     mainChoice.addEventListener("click", e => {
