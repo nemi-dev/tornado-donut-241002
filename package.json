@@ -13,6 +13,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@netlify/functions": "^2.8.2"
+    "@netlify/functions": "^2.8.2",
+    "gotrue-js": "^0.9.29"
   }
 }

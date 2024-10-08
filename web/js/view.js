@@ -1,23 +1,44 @@
-const ul = document.querySelector("nav ul")
+'use strict'
 
-!((async () => {
-  const response = await fetch("/list.json")
+let _wikiList = null
 
-  /** @type {[string, string][]} */
-  const list = await response.json()
-  list.forEach(([key, title]) => {
+async function getWikiList() {
+  if (!_wikiList) {
+    const response = await fetch("/list.json")
+    
+    /** @type {[string, string][]} */
+    const wikiList = await response.json()
+    
+    _wikiList = wikiList
+  }
+
+  return _wikiList
+}
+
+
+/**
+ * @param {HTMLElement} el 
+ */
+async function wiki(el) {
+  const wikiList = await getWikiList()
+
+  wikiList.forEach(([key, title]) => {
     const li = document.createElement("li")
     const anchor = document.createElement("a")
     anchor.setAttribute("href", `/w/${key}.html`)
     anchor.append(title)
     li.append(anchor)
-    ul.append(li)
+    el.append(li)
   })
-})())
+}
+
+!(async () => {
+  const ul = document.querySelector("nav ul")
+  wiki(ul)
+})()
 
 
 !(() => {
-  if (window.logoinit) return
   const logos = document.querySelectorAll(".logo")
 
   logos.forEach(el => {
@@ -29,5 +50,4 @@ const ul = document.querySelector("nav ul")
       `<span class="logo-dev">dev</span>`
     ].join("")
   })
-  window.logoinit = true
 })()

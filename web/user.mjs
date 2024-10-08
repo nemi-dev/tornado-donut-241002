@@ -1,3 +1,4 @@
+/** @type {import('gotrue-js').default} */
 export const auth = new GoTrue({
   APIUrl: 'https://bit.nemi.dev/.netlify/identity',
   audience: '',
