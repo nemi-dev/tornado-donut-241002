@@ -13,11 +13,12 @@
       top: 0;
       height: 50px;
       box-sizing: border-box;
+      padding-inline: 10px;
       background-color: var(--back);
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: end;
+      justify-content: space-between;
     }
     nav a {
       display: inline-block;
@@ -26,7 +27,7 @@
       font-family: "DM Sans", sans-serif;
     }
     header {
-      padding-block: 10%;
+      padding-block: 9svh;
     }
     header h1 {
       font-size: 36px;
@@ -85,9 +86,14 @@
 </head>
 
 <body>
-  <nav>
-    <a href="./login.html">Sign In</a>
-    <a href="./signup.html">Sign Up</a>
+  <nav apex>
+    <div>
+      <div class="logo logo-even" style="font-size: 24px;"></div>
+    </div>
+    <div class="QuickFlexRow">
+      <a href="./login.html">Sign In</a>
+      <a href="./signup.html">Sign Up</a>
+    </div>
   </nav>
   <header>
     <div style="font-size: 45px;"><h1 class="logo"></h1></div>

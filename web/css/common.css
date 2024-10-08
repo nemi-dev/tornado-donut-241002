@@ -62,6 +62,9 @@ body {
   font-weight: 900;
   font-size: 150%;
 }
+.logo-even .logo-bit {
+  font-size: unset;
+}
 
 .logo-dot { padding-inline: clamp(1px, 1%, 5px); }
 .logo-nemi { font-weight: 900; }

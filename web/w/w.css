@@ -9,6 +9,7 @@ header {
 main {
   width: clamp(200px, 60vw, 1000px);
   margin: auto;
+  padding: 36px 0;
 }
 
 main a {

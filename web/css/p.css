@@ -51,7 +51,6 @@ ul {
   padding: 20px;
 }
 
-main { padding: 36px 0; }
 
 
 .CenterWrapper {
@@ -60,4 +59,10 @@ main { padding: 36px 0; }
   justify-content: center;
   width: 100vw;
   height: 100vh;
+}
+
+.QuickFlexRow {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
 }
