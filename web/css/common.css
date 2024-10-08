@@ -75,3 +75,23 @@ body {
     color: rgb(37, 199, 255);
   }
 }
+
+nav[apex] {
+  position: sticky;
+  top: 0;
+  height: 50px;
+  box-sizing: border-box;
+  padding-inline: 10px;
+  background-color: var(--back);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+nav[apex] a {
+  display: inline-block;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
+}
