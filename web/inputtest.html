@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InputTest</title>
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/p.css">
+</head>
+<body>
+  <div class="CenterWrapper">
+    <main>
+      <form action="#" method="post">
+        <div>
+          <select name="select" id="Select">
+            <optgroup>
+              <option value="sel1">sel1</option>
+              <option value="sel2">sel2</option>
+              <option value="sel3">sel3</option>
+              <option value="sel4">sel4</option>
+              <option value="sel5">sel5</option>
+            </optgroup>
+            <optgroup>
+              <option value="sel6">sel6</option>
+              <option value="sel7">sel7</option>
+              <option value="sel8">sel8</option>
+              <option value="sel9">sel9</option>
+              <option value="sel10">sel10</option>
+            </optgroup>
+          </select>
+        </div>
+        <div>
+          <input type="text" name="datalist" id="DataListInput" list="DataList">
+          <datalist id="DataList">
+            <option value="dt1">DT1Title</option>
+            <option value="dt2">DT2Title</option>
+            <option value="dt3">DT3Title</option>
+            <option value="dt4">DT4Title</option>
+            <option value="dt5">DT5Title</option>
+          </datalist>
+        </div>
+        <div>
+          <input type="url"  id="URLInput" name="url" placeholder="url" required>
+          <input type="email" id="EmailInput" name="email" placeholder="email" required>
+          <input type="search" id="SearchInput" name="search" placeholder="search">
+        </div>
+        <div>
+          <input type="submit" value="YEAH">
+          <input type="reset" value="NAY">
+        </div>
+      </form>
+    </main>
+  </div>
+</body>
+</html>
