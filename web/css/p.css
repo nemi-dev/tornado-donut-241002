@@ -38,13 +38,7 @@ h1 {
   }
 }
 
-header {
-  padding-block: 30px;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  grid-column: 1 / -1;
-  position: relative;
-}
+
 
 nav {
  position: sticky;
@@ -57,9 +51,7 @@ ul {
   padding: 20px;
 }
 
-main {
-  padding: 20px;
-}
+main { padding: 36px 0; }
 
 
 .CenterWrapper {
