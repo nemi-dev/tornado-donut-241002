@@ -8,6 +8,7 @@
 
 :root {
   --back: #ffffff;
+  --box_shadow_color: #b1b7bb;
   background-color: var(--back, #ffffff);
   color-scheme: light dark;
   font-family: "Pretendard Variable", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -20,7 +21,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --back: #000000;
+    --back: #111318;
+    --box_shadow_color: #06090a;
   }
 }
 
@@ -61,7 +63,7 @@ body {
   font-size: 150%;
 }
 
-.logo-dot { opacity: 0.7; font-weight: 100; }
+.logo-dot { padding-inline: clamp(1px, 1%, 5px); }
 .logo-nemi { font-weight: 900; }
 .logo-dev { font-weight: 100; }
 

@@ -8,32 +8,118 @@
   <link rel="stylesheet" href="/css/common.css">
   <link rel="stylesheet" href="/css/p.css">
   <style>
+    nav {
+      position: sticky;
+      top: 0;
+      height: 50px;
+      box-sizing: border-box;
+      background-color: var(--back);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: end;
+    }
+    nav a {
+      display: inline-block;
+      padding: 8px 16px;
+      font-weight: 700;
+      font-family: "DM Sans", sans-serif;
+    }
     header {
       padding-block: 10%;
     }
     header h1 {
       font-size: 36px;
     }
+    main {
+      padding: 8px;
+      display: flex;
+      align-items: start;
+      gap: 8px;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    main > * {
+      padding: 10px;
+      padding-top: 20px;
+      box-sizing: border-box;
+      border-radius: 12px;
+      box-shadow: 3px 3px 6px var(--box_shadow_color);
+      border: 1px solid rgba(126, 130, 131, 0.486);
+      transition: box-shadow 0.1s ease-in;
+      flex: 300px 1;
+    }
+
+    main > *:hover {
+      box-shadow: 0 0 10px white, 3px 3px 6px var(--box_shadow_color);
+    }
+
+    h2 {
+      user-select: none;
+      text-align: center;
+      margin: 0;
+    }
+
+    ul {
+      margin-top: 10px;
+      display: block;
+      border-radius: 8px;
+      border: 1px solid rgba(126, 130, 131, 0.486);
+      padding: 0;
+    }
+
+    li {
+      display: block;
+      border-bottom: 1px solid rgba(126, 130, 131, 0.486);
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
+    li > a {
+      padding: 8px 12px;
+      display: block;
+    }
   </style>
 </head>
 
 <body>
+  <nav>
+    <a href="./login.html">Sign In</a>
+    <a href="./signup.html">Sign Up</a>
+  </nav>
   <header>
     <div style="font-size: 45px;"><h1 class="logo"></h1></div>
   </header>
   <main>
-
-  </main>
-  <div id="GridWrapper">
-
-    <nav>
+    <div>
+      <h2>My Stacks</h2>
+      <ul wiki-list></ul>
+    </div>
+    <div>
+      <h2>Playgrounds</h2>
       <ul>
+        <li><a href="./lunchmenu.html">Lunch Menu</a></li>
+        <li><a href="./inputtest.html">Input Test</a></li>
+        <li><a href="#">c</a></li>
+        <li><a href="#">d</a></li>
       </ul>
-    </nav>
-    <main>
-      <a href="./login.html">LOGIN</a>
-    </main>
-  </div>
+    </div>
+    <div>
+      <h2>Gallery</h2>
+      <ul>
+        <li><a href="#">a</a></li>
+        <li><a href="#">b</a></li>
+        <li><a href="#">c</a></li>
+        <li><a href="#">d</a></li>
+        <li><a href="#">e</a></li>
+      </ul>
+    </div>
+    <div>
+
+    </div>
+  </main>
 </body>
 <script src="/js/view.js" defer></script>
 </html>

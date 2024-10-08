@@ -1,5 +1,3 @@
-'use strict'
-
 let _wikiList = null
 
 async function getWikiList() {
@@ -32,22 +30,27 @@ async function wiki(el) {
   })
 }
 
+/**
+ * @param {HTMLElement} el 
+ */
+function logo(el) {
+  el.innerHTML = [
+    `<span class="logo-bit">bit</span>`,
+    `<span class="logo-dot">.</span>`,
+    `<span class="logo-nemi">nemi</span>`,
+    `<span class="logo-dot">.</span>`,
+    `<span class="logo-dev">dev</span>`
+  ].join("")
+}
+
 !(async () => {
-  const ul = document.querySelector("nav ul")
-  wiki(ul)
+  // const ul = document.querySelector("nav ul")
+  const targets = document.querySelectorAll("[wiki-list]")
+  targets.forEach(wiki)
 })()
 
 
 !(() => {
   const logos = document.querySelectorAll(".logo")
-
-  logos.forEach(el => {
-    el.innerHTML = [
-      `<span class="logo-bit">bit</span>`,
-      `<span class="logo-dot">.</span>`,
-      `<span class="logo-nemi">nemi</span>`,
-      `<span class="logo-dot">.</span>`,
-      `<span class="logo-dev">dev</span>`
-    ].join("")
-  })
+  logos.forEach(logo)
 })()
