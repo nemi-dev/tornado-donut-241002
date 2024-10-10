@@ -17,14 +17,27 @@
   <header>
     <h1>CSS Transform & Transition</h1>
   </header>
-  <main class="ResponsiveWrapper">
+  <main class="">
     <style>
+      main {
+        width: calc(100vw - 32px);
+      }
+      h3 {
+        font-size: 1rem;
+      }
+
       .BorderOne {
         display: inline-block;
         margin: 32px;
         border: 1px solid white;
         width: 64px;
         height: 64px;
+      }
+
+      @media (prefers-color-scheme: light) {
+        .BorderOne {
+          border-color: black;
+        }
       }
 
       .FillOne {
@@ -37,6 +50,10 @@
 
       .FillOne:not([style]) {
         --fill_color: orange;
+      }
+
+      .BorderOne[style*=perspective] .FillOne {
+        --fill_color: rgb(28, 153, 70);
       }
 
       .DemoRow {
@@ -52,98 +69,198 @@
         }
       }
 
+      .DemoCol {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
       #S1-Demo h2:not(:first-child) {
         margin-top: 2em;
       }
 
       #S1-Demo.Revoke * {
-        transform: none!important;
+        transform: none !important;
       }
     </style>
-    <section id="S1-Demo" class="Card Revoke">
-      <h2>Translate</h2>
-      <div class="DemoRow">
-        <div class="QuickFlexCol">
-          <h3>Original</h3>
-          <div class="BorderOne">
-            <div class="FillOne"></div>
+    <section id="S1-Demo" class="Revoke" style="--pers_length: 300px;">
+      <article id="TranslateDemo" class="Card">
+        <h2>Translate</h2>
+        <div class="DemoRow">
+          <div class="DemoCol">
+            <h3>Original</h3>
+            <div class="BorderOne">
+              <div class="FillOne"></div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>translateX(32px)</h3>
+            <div class="BorderOne">
+              <div class="FillOne" style="transform: translateX(32px);"></div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>translateY(32px)</h3>
+            <div class="BorderOne">
+              <div class="FillOne" style="transform: translateY(32px);"></div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>translate(16px, -16px)</h3>
+            <div class="BorderOne">
+              <div class="FillOne" style="transform: translate(16px, -16px);"></div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>translateZ(25px)*</h3>
+            <div class="BorderOne" style="perspective: var(--pers_length);">
+              <div class="FillOne" style="transform: translateZ(25px);"></div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>translateZ(-50px)*</h3>
+            <div class="BorderOne" style="perspective: var(--pers_length);">
+              <div class="FillOne" style="transform: translateZ(-50px);"></div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>translate3d(20px, 15px, 25px)*</h3>
+            <div class="BorderOne" style="perspective: var(--pers_length);">
+              <div class="FillOne" style="transform: translate3d(20px, 15px, 25px);"></div>
+            </div>
           </div>
         </div>
-        <div class="QuickFlexCol">
-          <h3>translateX(32px)</h3>
-          <div class="BorderOne">
-            <div class="FillOne" style="transform: translateX(32px);"></div>
+      </article>
+
+      <article id="SacleDemo" class="Card">
+        <h2>Scale</h2>
+        <div class="DemoRow">
+          <div class="DemoCol">
+            <h3>Original</h3>
+            <div class="BorderOne">
+              <div class="FillOne"></div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>scaleX(2)</h3>
+            <div class="BorderOne">
+              <div class="FillOne" style="transform: scaleX(2);"></div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>scaleY(0.5)</h3>
+            <div class="BorderOne">
+              <div class="FillOne" style="transform: scaleY(0.5);"></div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>scale(0.75, 1.5)</h3>
+            <div class="BorderOne">
+              <div class="FillOne" style="transform: scale(0.75, 1.5);"></div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>scaleZ(2) translateZ(100px)</h3>
+            <div class="BorderOne" style="perspective: var(--pers_length)">
+              <div class="FillOne" style="transform: scaleZ(2) translateZ(100px);">with scaleZ</div>
+            </div>
+            <div class="BorderOne" style="perspective: var(--pers_length)">
+              <div class="FillOne" style="transform: translateZ(100px)">w/o scaleZ</div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>scaleZ(0.5)*</h3>
+            <div class="BorderOne" style="perspective: var(--pers_length);">
+              <div class="FillOne" style="transform: scaleZ(0.5);"></div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>scale3d(1.5, 2, 0.5)*</h3>
+            <div class="BorderOne" style="perspective: var(--pers_length);">
+              <div class="FillOne" style="transform: scale3d(1.5, 2, 0.5);"></div>
+            </div>
           </div>
         </div>
-        <div class="QuickFlexCol">
-          <h3>translateY(32px)</h3>
-          <div class="BorderOne">
-            <div class="FillOne" style="transform: translateY(32px);"></div>
+      </article>
+
+      <article id="RotateDemo" class="Card">
+        <h2>Rotate</h2>
+        <div class="DemoRow">
+          <div class="DemoCol">
+            <h3>Original</h3>
+            <div class="BorderOne">
+              <div class="FillOne">⇧</div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>rotate(30deg)</h3>
+            <div class="BorderOne">
+              <div class="FillOne" style="transform: rotate(30deg);">⇧</div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>rotate(1rad)</h3>
+            <div class="BorderOne">
+              <div class="FillOne" style="transform: rotate(1rad);">⇧</div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>rotate(0.6turn)</h3>
+            <div class="BorderOne">
+              <div class="FillOne" style="transform: rotate(0.6turn);">⇧</div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>rotateX(27deg)</h3>
+            <div class="BorderOne" style="perspective: var(--pers_length);">
+              <div class="FillOne" style="transform: rotateX(27deg);">⇧</div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>rotateY(75deg)</h3>
+            <div class="BorderOne" style="perspective: var(--pers_length);">
+              <div class="FillOne" style="transform: rotateY(75deg);">⇧</div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>rotate3d(3, 2, 5, 54deg)</h3>
+            <div class="BorderOne" style="perspective: var(--pers_length);">
+              <div class="FillOne" style="transform: rotate3d(3, 2, 5, 54deg);">⇧</div>
+            </div>
           </div>
         </div>
-        <div class="QuickFlexCol">
-          <h3>translate(16px, -16px)</h3>
-          <div class="BorderOne">
-            <div class="FillOne" style="transform: translate(16px, -16px);"></div>
+      </article>
+
+      <article id="SkewDemo" class="Card">
+        <h2>Skew</h2>
+        <div class="DemoRow">
+          <div class="DemoCol">
+            <h3>Original</h3>
+            <div class="BorderOne">
+              <div class="FillOne">⇧</div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>skewX(30deg)</h3>
+            <div class="BorderOne">
+              <div class="FillOne" style="transform: skewX(30deg);">⇧</div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>skewY(0.5rad)</h3>
+            <div class="BorderOne">
+              <div class="FillOne" style="transform: skewY(0.5rad);">⇧</div>
+            </div>
+          </div>
+          <div class="DemoCol">
+            <h3>skew(0.1rad, 0.2rad)</h3>
+            <div class="BorderOne">
+              <div class="FillOne" style="transform: skew(-0.3rad, 0.6rad);">⇧</div>
+            </div>
           </div>
         </div>
-      </div>
-      <h2>Scale</h2>
-      <div class="DemoRow">
-        <div class="QuickFlexCol">
-          <h3>Original</h3>
-          <div class="BorderOne">
-            <div class="FillOne"></div>
-          </div>
-        </div>
-        <div class="QuickFlexCol">
-          <h3>scaleX(2)</h3>
-          <div class="BorderOne">
-            <div class="FillOne" style="transform: scaleX(2);"></div>
-          </div>
-        </div>
-        <div class="QuickFlexCol">
-          <h3>scaleY(0.5)</h3>
-          <div class="BorderOne">
-            <div class="FillOne" style="transform: scaleY(0.5);"></div>
-          </div>
-        </div>
-        <div class="QuickFlexCol">
-          <h3>scale(0.75, 1.5)</h3>
-          <div class="BorderOne">
-            <div class="FillOne" style="transform: scale(0.75, 1.5);"></div>
-          </div>
-        </div>
-      </div>
-      <h2>Rotate</h2>
-      <div class="DemoRow">
-        <div class="QuickFlexCol">
-          <h3>Original</h3>
-          <div class="BorderOne">
-            <div class="FillOne">⇧</div>
-          </div>
-        </div>
-        <div class="QuickFlexCol">
-          <h3>rotate(30deg)</h3>
-          <div class="BorderOne">
-            <div class="FillOne" style="transform: rotate(30deg);">⇧</div>
-          </div>
-        </div>
-        <div class="QuickFlexCol">
-          <h3>rotate(1rad)</h3>
-          <div class="BorderOne">
-            <div class="FillOne" style="transform: rotate(1rad);">⇧</div>
-          </div>
-        </div>
-        <div class="QuickFlexCol">
-          <h3>rotate(0.6turn)</h3>
-          <div class="BorderOne">
-            <div class="FillOne" style="transform: rotate(0.6turn);">⇧</div>
-          </div>
-        </div>
-      </div>
-      <div class="DemoRow">
-      </div>
+      </article>
+
     </section>
   </main>
 </body>
@@ -158,4 +275,5 @@
     document.querySelector("#S1-Demo").classList.remove("Revoke")
   })
 </script>
+
 </html>
