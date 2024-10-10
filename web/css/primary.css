@@ -89,6 +89,19 @@ ul {
   align-items: center;
 }
 
+.QuickFlexCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.WrapFlexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --back: #111318;
