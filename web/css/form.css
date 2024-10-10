@@ -1,4 +1,3 @@
-
 :root {
   --focused_color: rgb(30, 179, 200);
   --focused_shadow_color: rgba(30, 179, 200, 0.5);
@@ -17,6 +16,16 @@
     --issued_color: rgb(255, 56, 72);
     --issued_shadow_color: rgba(255, 56, 72, 0.5);
   }  
+}
+
+button,input:is([type=submit],[type=reset]) {
+  appearance: none;
+  color: var(--button_text, white);
+  background-color: var(--button_color, rgb(0, 119, 255));
+  border: none;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: all 0.1s;
 }
 
 fieldset {
@@ -66,7 +75,7 @@ input:is([type=text], [type=password], [type=email], [type=tel], [type=number]),
   border-radius: 8px;
 }
 
-input:focus,.FocusWithinView:focus-within {
+button:focus,input:focus,.FocusWithinView:focus-within {
   border-color: var(--focused_color);
   box-shadow: 0 0 5px var(--focused_shadow_color);
 }

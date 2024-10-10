@@ -324,22 +324,25 @@ pre:not([data-filename])::before {
         width: 100%;
       }
 
-      .GenderSet {
+      .RadioSet {
         display: flex;
         align-items: center;
       }
+
       .CheckGroup {
         flex-grow: 1;
         display: flex;
         align-items: center;
       }
+
       .CheckGroup label {
         font-size: 1rem;
         font-weight: 700;
         flex-grow: 1;
         transition: all 0.1s;
       }
-      .CheckGroup input:is([type=radio], [type=checkbox]):checked + label {
+
+      .CheckGroup input:is([type=radio], [type=checkbox]):checked+label {
         text-shadow: 0 0 5px var(--fulfilled_color);
       }
     </style>
@@ -389,7 +392,7 @@ pre:not([data-filename])::before {
           </i>
           <i>
             <label>성별</label>
-            <div class="GenderSet FocusWithinView">
+            <div class="RadioSet FocusWithinView">
               <div class="CheckGroup">
                 <input type="radio" id="gender-m" name="gender" value="m"><label for="gender-m">남</label>
               </div>
@@ -407,9 +410,30 @@ pre:not([data-filename])::before {
         </div>
       </fieldset>
       <fieldset>
+        <legend>Planning</legend>
+        <div class="GridRespo">
+          <i>
+            <label>구독 상품 선택</label>
+            <div class="RadioSet FocusWithinView">
+              <div class="CheckGroup">
+                <input type="radio" id="subscribe-1" name="subscribe" value="sub-1"><label for="subscribe-1">Free</label>
+              </div>
+              <div class="CheckGroup">
+                <input type="radio" id="subscribe-2" name="subscribe" value="sub-2" disabled><label for="subscribe-2">Pro</label>
+              </div>
+              <div class="CheckGroup">
+                <input type="radio" id="subscribe-3" name="subscribe" value="sub-3" disabled><label for="subscribe-3">Enterprise</label>
+              </div>
+            </div>
+            <div style="font-size: smaller; margin-inline-start: 1em;">아직 상품 판매를 안하고 있습니다.</div>
+          </i>
+
+        </div>
+      </fieldset>
+      <fieldset>
         <legend>Legal Notice</legend>
         <div class="Col">
-          <textarea name="legal" id="legal" style="height: 100px;" readonly>
+          <textarea id="legal" style="height: 100px;" readonly>
 이 사이트는 개인 운영으로, 아직 어떠한 개인정보도 수집하지 않습니다. 그래서 이 체크박스는 명목상 동의입니다. 어차피 여러분들 안 읽잖ㅇ
           </textarea>
           <i class="CheckGroup FocusWithinView">
