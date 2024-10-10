@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fragment/Hash Test</title>
+  <link rel="stylesheet" type="text/css" href="/css/common.css">
+  <link rel="stylesheet" type="text/css" href="/css/p.css">
+  <style>
+    :target {
+      color: white;
+      background-color: #8a2be2;
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <nav>
+      <a href="#First"><div>First</div></a>
+      <a href="#Second"><div>Second</div></a>
+      <a href="#Third"><div>Third</div></a>
+    </nav>
+    <article>
+      <section>
+        <h2 id="First">First</h2>
+      </section>
+      <section>
+        <h2 id="Second">Second</h2>
+      </section>
+      <section>
+        <h2 id="Third">Third</h2>
+      </section>
+    </article>
+  </main>
+</body>
+<script src="/js/component.js" defer></script>
+<script src="/js/view.js" defer></script>
+</html>

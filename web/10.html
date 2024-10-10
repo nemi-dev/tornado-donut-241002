@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10</title>
+  <link rel="stylesheet" type="text/css" href="/css/common.css">
+  <link rel="stylesheet" type="text/css" href="/css/p.css">
+  <link rel="stylesheet" type="text/css" href="/css/work.css">
+</head>
+
+<body>
+  <header>
+    <h1>CSS Selectors</h1>
+  </header>
+  <main style="--width: 80vw;">
+    <section id="S1-Demo" class="Card">
+      <h1>descendants</h1>
+      <style>
+        article span.Emp {
+          font-weight: 900;
+          text-decoration: underline overline;
+        }
+
+        p p {
+          color: red;
+        }
+
+        p h2 {
+          background-color: yellow;
+        }
+      </style>
+      <pre><code>
+article span.Emp {
+  font-weight: 900;
+  text-decoration: underline overline;
+}
+p p {
+  color: red;
+}
+p h2 {
+  background-color: yellow;
+}
+</code></pre>
+      <article>
+        <p>
+          이것은 첫 번째 문단이다. 그리고 이것은 <span class="Emp">스타일 적용된</span> 요소이다.
+        <p>참고 : P 태그 안의 P 태그는 자동으로 빠져나온다. 비슷하게 h1~h6 태그 및 블록 레벨 태그도 자동으로 빠져나온다. 그래서 이런 식으로 자손 선택자를 쓰면 안된다.</p>
+        <pre><code>
+p p { /* ... */ }
+p h1 { /* ... */ }
+</code></pre>
+        <h2>헉!! 진짜네!!</h2>
+        </p>
+        <div>
+          <p>하지만 div 안의 p는 자동으로 빠져나오지 않는다. div는 시멘틱이 아니라 오로지 구분만 하기 때문이다. 그리고 <span class="Emp">이렇게 스타일도 잘
+              적용된다.</span></p>
+        </div>
+      </article>
+    </section>
+    <section id="S2-Demo" class="Card">
+      <style>
+        #S2-Demo > article > div {
+          border: 1px solid white;
+        }
+
+        @media (prefers-color-scheme: light) {
+          #S2-Demo > article > div {
+            border: 1px solid black;
+          }
+        }
+      </style>
+      <h1>Direct Child</h1>
+      <pre><code>
+.S2-Demo &gt; article &gt; div {
+  /* ... */
+}
+</code></pre>
+      <article>
+        <div>이 div는 border 스타일이 적용되어 있다.</div>
+        <p>그리고 페이지 소스로 보면 이 div는
+        <div>테두리 처리가 되지 않을 것 같지만 div도 블록 요소이기 때문에 p를 뚫고 나와서 <code>.S2-Demo &gt; div</code> selector에 선택된다.</div>
+        </p>
+        <div>이 div는 테두리 처리가 되었지만 <div>지금 여기서 시작되는 dif는 테두리 처리가 되지 않았다</div></div>
+        <blockquote>
+          <h3>아 그리고</h3>
+          위 섹션에서 만든 CSS 선택자는 <span class="Emp">현재 섹션에도 영향을 준다.</span> 다시말해, CSS는 전역(Global)으로 적용된다.
+        </blockquote>
+      </article>
+
+    </section>
+    <section class="Card">
+      <h1></h1>
+      <p></p>
+    </section>
+    <section class="Card">
+      <h1></h1>
+      <p></p>
+    </section>
+    <section class="Card">
+      <h1></h1>
+      <p></p>
+    </section>
+    <section class="Card">
+      <h1></h1>
+      <p></p>
+    </section>
+  </main>
+</body>
+<script src="/js/component.js" defer></script>
+<script src="/js/view.js" defer></script>
+<link rel="stylesheet" href="/vendor/highlight/github.min.css">
+<link rel="stylesheet" href="/vendor/highlight/github-dark.min.css">
+<script src="/vendor/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</html>

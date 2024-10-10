@@ -20,6 +20,19 @@
   -webkit-font-smoothing: antialiased;
 }
 
+@media screen and (max-width: 767px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --back: #111318;
@@ -53,7 +66,7 @@ site-logo:hover {
   color: rgb(0, 132, 255);
   font-weight: 900;
 }
-.logo-dot { padding-inline: clamp(1px, 1%, 5px); }
+.logo-dot { padding-inline: clamp(1px, 1vw, 3px); }
 .logo-nemi { font-weight: 900; }
 .logo-dev { font-weight: 100; }
 
@@ -93,4 +106,28 @@ site-nav site-logo {
   flex-direction: row;
   align-items: center;
   gap: 8px;
+}
+
+main {
+  width: clamp(360px, var(--width, 60vw), 1000px);
+  margin: auto;
+  padding-block: 10svh;
+}
+
+pre {
+  line-height: 1.2em;
+}
+
+.Card {
+  padding: 8px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  background-color: var(--back);
+  box-shadow: 3px 3px 6px var(--box_shadow_color);
+  border: 1px solid rgba(126, 130, 131, 0.486);
+  transition: box-shadow 0.1s ease-in;
+}
+
+.Card:hover {
+  box-shadow: 0 0 10px white, 3px 3px 6px var(--box_shadow_color);
 }

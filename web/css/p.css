@@ -30,7 +30,7 @@ h1 {
   grid-template-columns: 240px 1fr;
 }
 
-@media (max-width: 800px) {
+@media screen and (max-width: 767px) {
   #GridWrapper {
     display: block;
   }
