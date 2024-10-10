@@ -1,0 +1,72 @@
+
+:root {
+  --focused_color: rgb(30, 179, 200);
+  --focused_shadow_color: rgba(30, 179, 200, 0.5);
+  --fulfilled_color: rgb(15, 163, 82);
+  --fulfilled_shadow_color: rgba(15, 163, 82, 0.5);
+  --issued_color: rgb(216, 41, 41);
+  --issued_shadow_color: rgba(216, 41, 41, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focused_color: rgb(40, 205, 255);
+    --focused_shadow_color: rgba(40, 205, 255, 0.5);
+    --fulfilled_color: rgb(0, 255, 160);
+    --fulfilled_shadow_color: rgba(0, 255, 160, 0.5);
+    --issued_color: rgb(255, 56, 72);
+    --issued_shadow_color: rgba(255, 56, 72, 0.5);
+  }  
+}
+
+fieldset {
+  padding: 8px;
+  border: 1px solid rgba(145, 187, 169, 1);
+  border-radius: 8px;
+}
+
+input:is([type=text], [type=password], [type=email], [type=tel], [type=number]), textarea {
+  font-size: inherit;
+  color: inherit;
+  background-color: var(--back);
+  border: 1px solid rgba(156, 192, 180, 0.5);
+  font-weight: bolder;
+  padding: 4px;
+  border-radius: 8px;
+  transition-property: border, box-shadow;
+  transition-duration: 0.1s;
+
+  &:required:valid {
+    border-color: var(--fulfilled_color);
+    box-shadow: 0 0 5px var(--fulfilled_shadow_color);
+  }
+
+  &.issue:required {
+    border-color: var(--issued_color);
+    box-shadow: 0 0 5px var(--issued_shadow_color);
+  }
+
+  &:optional:invalid {
+    border-color: var(--issued_color);
+    box-shadow: 0 0 5px var(--issued_shadow_color);
+  }
+
+  &:focus {
+    border-color: var(--focused_color);
+    box-shadow: 0 0 5px var(--focused_shadow_color);
+  }
+}
+
+.FocusWithinView {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #00000000;
+  transition-property: border, box-shadow;
+  transition-duration: 0.1s;
+  border-radius: 8px;
+}
+
+input:focus,.FocusWithinView:focus-within {
+  border-color: var(--focused_color);
+  box-shadow: 0 0 5px var(--focused_shadow_color);
+}

@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>10</title>
-  <link rel="stylesheet" type="text/css" href="/css/common.css">
   <link rel="stylesheet" type="text/css" href="/css/primary.css">
+  <link rel="stylesheet" type="text/css" href="/css/common.css">
+  <link rel="stylesheet" type="text/css" href="/css/form.css">
   <link rel="stylesheet" type="text/css" href="/css/work.css">
   <link href="/vendor/highlight/github.min.css" rel="stylesheet" media="(prefers-color-scheme: light)">
   <link href="/vendor/highlight/github-dark.min.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
@@ -22,7 +23,7 @@
   <header>
     <h1>CSS Selectors</h1>
   </header>
-  <main class="ResponsiveWrapper">
+  <div class="ResponsiveWrapper">
     <section id="S1-Demo" class="Card">
       <h2>Descendants</h2>
       <style>
@@ -260,13 +261,13 @@ main a:visited:not(:hover) {
     </section>
     <section id="S7-Demo" class="Card">
       <h2>Pseudo-Element</h2>
-<pre data-filename="/css/common.css"><code class="language-css">
+      <pre data-filename="/css/common.css"><code class="language-css">
 pre[data-filename]::before {
   content: attr(data-filename);
   /* ... */
 }
 </code></pre>
-<pre><code class="language-css">
+      <pre><code class="language-css">
 pre:not([data-filename])::before {
   content: "&lt;style&gt;";
   /* ... */
@@ -277,11 +278,154 @@ pre:not([data-filename])::before {
         단, 이 페이지에서만 사용된 코드를 나타낸 코드 블록은 자동으로 &lt;style&gt;란 텍스트가 보이도록 했다.
       </article>
     </section>
-  </main>
-  <h1>Awesome form using pseudo</h1>
-  <div class="ResponsiveWrapper">
-    
   </div>
+
+  <main class="Card">
+    <h1>Awesome form using pseudo</h1>
+    <article>
+      <p>
+        지금까지 배운 것들을 이용한 세계 최고의 입력 폼!!!
+      <div style="font-size: 50%; opacity: 0.5;">(내 기준에서)</div>
+      </p>
+    </article>
+    <style>
+      textarea {
+        font-family: inherit;
+        resize: vertical;
+      }
+
+      label {
+        font-size: smaller;
+        font-weight: bolder;
+        display: block;
+      }
+
+      .Col {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .GridRespo {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+        gap: 8px;
+
+        &>i {
+          font-style: normal;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+        }
+      }
+
+      .QuickFlexRow input:not([type=radio]) {
+        width: 100%;
+      }
+
+      .GenderSet {
+        display: flex;
+        align-items: center;
+      }
+      .CheckGroup {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+      }
+      .CheckGroup label {
+        font-size: 1rem;
+        font-weight: 700;
+        flex-grow: 1;
+        transition: all 0.1s;
+      }
+      .CheckGroup input:is([type=radio], [type=checkbox]):checked + label {
+        text-shadow: 0 0 5px var(--fulfilled_color);
+      }
+    </style>
+    <script defer>
+
+    </script>
+    <form action="#" onsubmit="event.preventDefault()">
+      <fieldset>
+        <legend>User Info</legend>
+        <div class="GridRespo">
+          <i>
+            <label for="email">E-mail 주소</label>
+            <input type="email" id="email" name="email" placeholder="me@gmail.com" required>
+          </i>
+          <i>
+            <label for="username">계정</label>
+            <input type="text" id="username" name="username" placeholder="username" required>
+          </i>
+          <i>
+            <label for="pw">비밀번호</label>
+            <input type="password" id="pw" name="pw" placeholder="password" required>
+          </i>
+          <i>
+            <label for="confirm">비밀번호 확인</label>
+            <input type="password" id="confirm" placeholder="password check" required>
+          </i>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Optional Info</legend>
+        <div class="GridRespo">
+          <i>
+            <label for="displayname">이름</label>
+            <input type="text" name="exprname" id="exprname" placeholder="Expression Name">
+          </i>
+          <i>
+            <label for="bday-year">생년월일</label>
+            <div class="QuickFlexRow">
+              <input type="number" id="bday-year" name="bday-year" placeholder="YYYY">
+              <input type="number" id="bday-month" name="bday-month" placeholder="MM">
+              <input type="number" id="bday-day" name="bday-day" placeholder="DD">
+            </div>
+          </i>
+          <i>
+            <label for="contact">연락처</label>
+            <input type="tel" name="contact" id="contact" placeholder="Tel" required>
+          </i>
+          <i>
+            <label>성별</label>
+            <div class="GenderSet FocusWithinView">
+              <div class="CheckGroup">
+                <input type="radio" id="gender-m" name="gender" value="m"><label for="gender-m">남</label>
+              </div>
+              <div class="CheckGroup">
+                <input type="radio" id="gender-f" name="gender" value="f"><label for="gender-f">여</label>
+              </div>
+              <div class="CheckGroup">
+                <input type="radio" id="gender-u" name="gender" value="u"><label for="gender-u">기타</label>
+              </div>
+              <div class="CheckGroup">
+                <input type="radio" id="gender-p" name="gender" value="p"><label for="gender-p">비공개</label>
+              </div>
+            </div>
+          </i>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Legal Notice</legend>
+        <div class="Col">
+          <textarea name="legal" id="legal" style="height: 100px;" readonly>
+이 사이트는 개인 운영으로, 아직 어떠한 개인정보도 수집하지 않습니다. 그래서 이 체크박스는 명목상 동의입니다. 어차피 여러분들 안 읽잖ㅇ
+          </textarea>
+          <i class="CheckGroup FocusWithinView">
+            <input type="checkbox" name="agree" id="legal-agree" required>
+            <label for="legal-agree">위의 사항을 읽었고, 이에 동의합니다.</label>
+          </i>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>보내기</legend>
+        <input type="submit" value="보내기">
+        <input type="reset" value="삭제">
+      </fieldset>
+    </form>
+  </main>
+
 </body>
 <script src="/js/component.js"></script>
 <script src="/js/view.js"></script>

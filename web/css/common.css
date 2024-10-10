@@ -99,9 +99,9 @@ pre {
 .ResponsiveWrapper {
   width: calc(100vw - 20px);
   margin: auto;
-  padding: 8px;
   display: flex;
   align-items: stretch;
+  justify-content: space-evenly;
   gap: 8px;
   flex-wrap: wrap;
   flex-direction: row;

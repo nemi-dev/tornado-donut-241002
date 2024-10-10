@@ -86,7 +86,7 @@ ul {
 .QuickFlexRow {
   display: flex;
   flex-direction: row;
-  align-content: center;
+  align-items: center;
 }
 
 @media (prefers-color-scheme: dark) {
