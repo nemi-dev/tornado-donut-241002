@@ -9,9 +9,10 @@
 :root {
   --back: #ffffff;
   --box_shadow_color: #b1b7bb;
+  --nav_height: 50px;
   background-color: var(--back, #ffffff);
   color-scheme: light dark;
-  font-family: "Pretendard Variable", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, "Pretendard Variable", system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-synthesis: none;
@@ -30,22 +31,8 @@ body {
   margin: 0;
 }
 
-.author {
-  position: absolute;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  display: block;
-  padding: 12px 48px;
 
-  color: initial;
-}
-
-.author:hover {
-  color: initial;
-}
-
-.logo {
+/*.logo, */ site-logo {
   display: flex;
   align-items: baseline;
   justify-content: center;
@@ -55,17 +42,17 @@ body {
   font-weight: 400;
   font-style: normal;
   user-select: none;
+  color: initial;
+}
+
+site-logo:hover {
+  color: initial;
 }
 
 .logo-bit {
   color: rgb(0, 132, 255);
   font-weight: 900;
-  font-size: 150%;
 }
-.logo-even .logo-bit {
-  font-size: unset;
-}
-
 .logo-dot { padding-inline: clamp(1px, 1%, 5px); }
 .logo-nemi { font-weight: 900; }
 .logo-dev { font-weight: 100; }
@@ -76,10 +63,10 @@ body {
   }
 }
 
-nav[apex] {
+site-nav {
   position: sticky;
   top: 0;
-  height: 50px;
+  height: var(--nav_height, 50px);
   box-sizing: border-box;
   padding-inline: 10px;
   background-color: var(--back);
@@ -89,9 +76,21 @@ nav[apex] {
   justify-content: space-between;
   z-index: 1;
 }
-nav[apex] a {
+
+site-nav a {
   display: inline-block;
   padding: 8px 16px;
   font-weight: 700;
   font-family: "DM Sans", sans-serif;
+}
+
+site-nav site-logo {
+  font-size: 24px;
+}
+
+[wiki-list] a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
 }

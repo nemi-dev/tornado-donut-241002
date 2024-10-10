@@ -3,8 +3,6 @@ a {
   text-decoration: none;
   transition: color 0.1s ease-in;
 
-  
-
   &:hover {
     color: rgb(162, 0, 255);
   }
@@ -40,11 +38,6 @@ h1 {
 
 
 
-nav {
- position: sticky;
- top: 0;
- align-self: start;
-}
 
 ul {
   margin: 0;

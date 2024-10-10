@@ -26,6 +26,14 @@ main a:visited:not(:hover) {
   }
 }
 
+
+nav {
+  position: sticky;
+  /* top: 0; */
+  top: var(--nav_height, 50px);
+  align-self: start;
+}
+
 table.infobox, figure, div.tright, .sidebar, .side-box-right {
   float: right;
   clear: right;

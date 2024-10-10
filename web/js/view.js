@@ -15,28 +15,18 @@ async function getWikiList() {
 }
 
 let injectDevicon = () => {
+  injectDevicon = noop
   const linkElemet = document.createElement("link")
   linkElemet.rel = "stylesheet"
   linkElemet.type = "text/css"
   linkElemet.href = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
   document.head.prepend(linkElemet)
-  injectDevicon = noop
 }
 
-let injectApexNav = () => {
-  const nav = document.createElement("nav")
-  nav.setAttribute("apex", "")
-  nav.innerHTML = `\
-<div>
-  <div class="logo logo-even" style="font-size: 24px;"></div>
-</div>
-<div class="QuickFlexRow">
-  <a href="./login.html">Sign In</a>
-  <a href="./signup.html">Sign Up</a>
-</div>\
-`.replace(/\s+/g, " ")
-  document.body.prepend(nav)
-  injectApexNav = noop
+let injectSiteNav = () => {
+  injectSiteNav = noop
+  if (document.querySelector("site-nav")) return
+  document.body.prepend(document.createElement("site-nav"))
 }
 
 /**
@@ -49,13 +39,16 @@ async function wiki(el) {
     const li = document.createElement("li")
     const anchor = document.createElement("a")
     anchor.setAttribute("href", `/w/${key}.html`)
-    anchor.append(title)
+
+    const titleSpan = document.createElement("span")
+    titleSpan.append(title)
+    anchor.append(titleSpan)
 
     if (icon) {
       injectDevicon?.()
-      const iel = document.createElement("i")
-      iel.classList.add(`devicon-${icon}`)
-      anchor.prepend(iel)
+      const iconEl = document.createElement("i")
+      iconEl.classList.add(`devicon-${icon}`)
+      anchor.prepend(iconEl)
     }
 
     li.append(anchor)
@@ -63,30 +56,12 @@ async function wiki(el) {
   })
 }
 
-/**
- * @param {HTMLElement} el 
- */
-function logo(el) {
-  el.innerHTML = [
-    `<span class="logo-bit">bit</span>`,
-    `<span class="logo-dot">.</span>`,
-    `<span class="logo-nemi">nemi</span>`,
-    `<span class="logo-dot">.</span>`,
-    `<span class="logo-dev">dev</span>`
-  ].join("")
-}
-
 !(async () => {
-  // const ul = document.querySelector("nav ul")
   const targets = document.querySelectorAll("[wiki-list]")
   targets.forEach(wiki)
 })()
 
 
 !(() => {
-  if (!document.querySelector("nav[apex]")) injectApexNav()
-  
-  const logos = document.querySelectorAll(".logo")
-  logos.forEach(logo)
-
+  injectSiteNav()
 })()
