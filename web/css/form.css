@@ -18,7 +18,7 @@
   }  
 }
 
-button,input:is([type=submit],[type=reset]) {
+a.UseButton,button,input:is([type=submit],[type=reset]) {
   appearance: none;
   color: var(--button_text, white);
   background-color: var(--button_color, rgb(0, 119, 255));
@@ -75,7 +75,7 @@ input:is([type=text], [type=password], [type=email], [type=tel], [type=number]),
   border-radius: 8px;
 }
 
-button:focus,input:focus,.FocusWithinView:focus-within {
+:is(a.UseButton,button,input):focus,.FocusWithinView:focus-within {
   border-color: var(--focused_color);
   box-shadow: 0 0 5px var(--focused_shadow_color);
 }
