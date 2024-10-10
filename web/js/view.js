@@ -56,6 +56,27 @@ async function wiki(el) {
   })
 }
 
+
+
+/**
+ * @param {HTMLPreElement} pre 
+ */
+function _truncateLine(pre) {
+  const code = pre.querySelector("code")
+  const codeText = code.firstChild
+  const vector = codeText.nodeValue.split("\n")
+  while (!(vector.at(0).trim())) vector.shift()
+  while (!(vector.at(-1).trim())) vector.pop()
+
+  const v = vector.join("\n")
+  codeText.nodeValue = v
+}
+
+function truncateEmptyLines() {
+  Array.from(document.querySelectorAll("pre")).forEach(_truncateLine)
+}
+
+
 !(async () => {
   const targets = document.querySelectorAll("[wiki-list]")
   targets.forEach(wiki)

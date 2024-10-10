@@ -1,57 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
-* {
-  outline: none;
-}
-
-:root {
-  --back: #ffffff;
-  --box_shadow_color: #b1b7bb;
-  --nav_height: 50px;
-  background-color: var(--back, #ffffff);
-  color-scheme: light dark;
-  font-family: Inter, "Pretendard Variable", system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
-
-@media screen and (max-width: 767px) {
-  :root {
-    font-size: 14px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  :root {
-    font-size: 16px;
-  }
-}
-
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --back: #111318;
-    --box_shadow_color: #06090a;
-  }
-}
-
-body {
-  margin: 0;
-}
-
-
-/*.logo, */ site-logo {
+site-logo {
   display: flex;
   align-items: baseline;
   justify-content: center;
   font-family: "DM Sans", sans-serif !important;
   font-optical-sizing: auto;
-  font-size: 200%;
   font-weight: 400;
   font-style: normal;
   user-select: none;
@@ -92,7 +44,7 @@ site-nav {
 
 site-nav a {
   display: inline-block;
-  padding: 8px 16px;
+  padding: 4px 8px;
   font-weight: 700;
   font-family: "DM Sans", sans-serif;
 }
@@ -109,9 +61,9 @@ site-nav site-logo {
 }
 
 main {
-  width: clamp(360px, var(--width, 60vw), 1000px);
+  width: clamp(300px, var(--width, 60vw), 1000px);
   margin: auto;
-  padding-block: 10svh;
+  padding-block: 5svh;
 }
 
 pre {
@@ -131,3 +83,78 @@ pre {
 .Card:hover {
   box-shadow: 0 0 10px white, 3px 3px 6px var(--box_shadow_color);
 }
+
+
+#GridWrapper {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+}
+
+@media screen and (max-width: 767px) {
+  #GridWrapper {
+    display: block;
+  }
+}
+
+.ResponsiveWrapper {
+  /* width: initial; */
+  width: calc(100vw - 20px);
+  margin: auto;
+  padding: 8px;
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.ResponsiveWrapper > * {
+  /* flex: 300px 1; */
+  flex-basis: min(var(--basis), 90vw);
+  flex-grow: 1;
+}
+
+
+
+
+pre[data-filename] {
+  position: relative;
+}
+
+pre[data-filename]::before {
+  position: absolute;
+  content: attr(data-filename);
+  top: 8px;
+  right: 8px;
+  display: inline-block;
+  padding: 4px;
+  font-size: 80%;
+  opacity: 0.8;
+  border: 1px solid rgba(179, 229, 245, 0.637);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+
+
+
+@media screen and (min-width: 769px) {
+  :root {
+    --basis: 24vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --basis: 32vw;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  :root {
+    --basis: 90vw;
+  }
+}
+
+

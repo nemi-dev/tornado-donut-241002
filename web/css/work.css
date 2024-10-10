@@ -5,3 +5,22 @@ header {
 .Card {
   margin-block-end: 20px;
 }
+
+@media screen and (min-width: 769px) {
+  :root {
+    --basis: 32vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --basis: 48vw;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  :root {
+    --basis: 90vw;
+  }
+}
+

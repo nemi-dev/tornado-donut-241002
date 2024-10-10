@@ -5,14 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>12</title>
   <link rel="stylesheet" type="text/css" href="/css/common.css">
-  <link rel="stylesheet" type="text/css" href="/css/p.css">
+  <link rel="stylesheet" type="text/css" href="/css/primary.css">
   <link rel="stylesheet" type="text/css" href="/css/work.css">
+  <link href="/vendor/highlight/github.min.css" rel="stylesheet" media="(prefers-color-scheme: light)">
+  <link href="/vendor/highlight/github-dark.min.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
+  <script src="/vendor/highlight.min.js"></script>
 </head>
 <body>
   <header>
     <h1>Responsive Web</h1>
   </header>
-  <main style="--width:80vw;">
+  <main class="ResponsiveWrapper">
+
     <section id="S1-Demo" class="Card">
       기기를 다 살 수 없으면 여기로 : <a href="https://yesviz.com/" target="_blank" rel="noreferrer noopener">https://yesviz.com/</a>
     </section>
@@ -21,6 +25,10 @@
     </section>
   </main>
 </body>
-<script src="/js/component.js" defer></script>
-<script src="/js/view.js" defer></script>
+<script src="/js/component.js"></script>
+<script src="/js/view.js"></script>
+<script>
+window.truncateEmptyLines()
+hljs.highlightAll();
+</script>
 </html>

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+* {
+  outline: none;
+}
+
+:root {
+  color-scheme: light dark;
+
+  --back: #ffffff;
+  --box_shadow_color: #b1b7bb;
+  --nav_height: 50px;
+  background-color: var(--back, #ffffff);
+  font-family: Inter, "Pretendard Variable", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+
+body {
+  margin: 0;
+}
+
+
+
+a {
+  color: rgb(18, 177, 156);
+  text-decoration: none;
+  transition: color 0.1s ease-in;
+
+  &:hover {
+    color: rgb(162, 0, 255);
+  }
+}
+
+pre {
+  font-weight: initial;
+}
+
+pre, code {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-size: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  a {
+    color: rgb(96, 255, 215);
+
+    &:hover {
+      color: rgb(204, 115, 255);
+    }
+  } 
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+}
+
+
+
+
+ul {
+  margin: 0;
+  padding: 20px;
+}
+
+
+
+.CenterWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.QuickFlexRow {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --back: #111318;
+    --box_shadow_color: #06090a;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root { font-size: 14px; }
+  h1 { font-size: 1.5em; }
+  h2 { font-size: 1.25em; }
+  h3 { font-size: 1.1em; }
+  h4 { font-size: 1em; }
+}
+
+@media screen and (max-width: 320px) {
+  :root { font-size: 12px; }
+}
+
+

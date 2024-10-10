@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>10</title>
   <link rel="stylesheet" type="text/css" href="/css/common.css">
-  <link rel="stylesheet" type="text/css" href="/css/p.css">
+  <link rel="stylesheet" type="text/css" href="/css/primary.css">
   <link rel="stylesheet" type="text/css" href="/css/work.css">
+  <link href="/vendor/highlight/github.min.css" rel="stylesheet" media="(prefers-color-scheme: light)">
+  <link href="/vendor/highlight/github-dark.min.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
+  <script src="/vendor/highlight.min.js"></script>
+  <style>
+    pre:not([data-filename]) {
+      position: relative;
+    }
+
+    pre:not([data-filename])::before {
+      position: absolute;
+      content: "<style>";
+      top: 8px;
+      right: 8px;
+      display: inline-block;
+      padding: 4px;
+      font-size: 80%;
+      opacity: 0.8;
+      border: 1px solid rgba(179, 229, 245, 0.637);
+      border-radius: 8px;
+      pointer-events: none;
+    }
+  </style>
 </head>
 
 <body>
   <header>
     <h1>CSS Selectors</h1>
   </header>
-  <main style="--width: 80vw;">
+  <main class="ResponsiveWrapper">
     <section id="S1-Demo" class="Card">
-      <h1>descendants</h1>
+      <h1>Descendants</h1>
       <style>
         article span.Emp {
           font-weight: 900;
-          text-decoration: underline overline;
+          text-decoration: underline;
         }
 
         p p {
@@ -30,23 +53,17 @@
           background-color: yellow;
         }
       </style>
-      <pre><code>
+      <pre><code class="language-css">
 article span.Emp {
   font-weight: 900;
-  text-decoration: underline overline;
-}
-p p {
-  color: red;
-}
-p h2 {
-  background-color: yellow;
+  text-decoration: underline;
 }
 </code></pre>
       <article>
         <p>
           이것은 첫 번째 문단이다. 그리고 이것은 <span class="Emp">스타일 적용된</span> 요소이다.
         <p>참고 : P 태그 안의 P 태그는 자동으로 빠져나온다. 비슷하게 h1~h6 태그 및 블록 레벨 태그도 자동으로 빠져나온다. 그래서 이런 식으로 자손 선택자를 쓰면 안된다.</p>
-        <pre><code>
+        <pre><code class="language-css">
 p p { /* ... */ }
 p h1 { /* ... */ }
 </code></pre>
@@ -59,20 +76,20 @@ p h1 { /* ... */ }
       </article>
     </section>
     <section id="S2-Demo" class="Card">
+      <h1>Direct Child</h1>
       <style>
-        #S2-Demo > article > div {
+        #S2-Demo>article>div {
           border: 1px solid white;
         }
 
         @media (prefers-color-scheme: light) {
-          #S2-Demo > article > div {
+          #S2-Demo>article>div {
             border: 1px solid black;
           }
         }
       </style>
-      <h1>Direct Child</h1>
-      <pre><code>
-.S2-Demo &gt; article &gt; div {
+      <pre><code class="language-css">
+#S2-Demo &gt; article &gt; div {
   /* ... */
 }
 </code></pre>
@@ -81,7 +98,8 @@ p h1 { /* ... */ }
         <p>그리고 페이지 소스로 보면 이 div는
         <div>테두리 처리가 되지 않을 것 같지만 div도 블록 요소이기 때문에 p를 뚫고 나와서 <code>.S2-Demo &gt; div</code> selector에 선택된다.</div>
         </p>
-        <div>이 div는 테두리 처리가 되었지만 <div>지금 여기서 시작되는 dif는 테두리 처리가 되지 않았다</div></div>
+        <div>이 div는 테두리 처리가 되었지만 <div>지금 여기서 시작되는 dif는 테두리 처리가 되지 않았다</div>
+        </div>
         <blockquote>
           <h3>아 그리고</h3>
           위 섹션에서 만든 CSS 선택자는 <span class="Emp">현재 섹션에도 영향을 준다.</span> 다시말해, CSS는 전역(Global)으로 적용된다.
@@ -89,28 +107,187 @@ p h1 { /* ... */ }
       </article>
 
     </section>
-    <section class="Card">
-      <h1></h1>
-      <p></p>
+    <section id="S3-Demo" class="Card">
+      <h1>Adjacent</h1>
+      <style>
+        #S3-Demo i+span {
+          font-weight: 900;
+          text-decoration: none;
+        }
+      </style>
+      <pre><code class="language-css">
+#S3-Demo span + u {
+  font-weight: 900;
+  font-style: normal;
+}
+</code></pre>
+      <article>
+        <p>
+          <i>i 다음에 바로 나타나는 span은</i>
+          <span>굵은 텍스트 처리가 되고, 밑줄 처리가 사라진다.</span>
+          <span>하지만, 그 다음 나타나는 span은 다시 원래대로 보인다.</span>
+        </p>
+        <p>
+          <i>&lt;i&gt; 다음에</i>
+          텍스트가 있어도 그 다음 나타나는
+          <span>&lt;u&gt;는 이 CSS 선택자에 선택된다.</span>
+        </p>
+      </article>
     </section>
-    <section class="Card">
-      <h1></h1>
-      <p></p>
+    <section id="S4-Demo" class="Card">
+      <h1>Sibling</h1>
+      <style>
+        #S4-Demo i~span {
+          font-weight: 900;
+          color: orangered;
+        }
+      </style>
+      <pre><code class="language-css">
+#S4-Demo i ~ span {
+  font-weight: 900;
+  color: orangered;
+}
+</code></pre>
+      <article>
+        <p>
+          <i>&lt;i&gt; 다음에 나타나는 자신의 모든 형제인 span이</i>
+          <span>이 Selector에</span>
+          <span>선택된다</span>
+          <u>심지어 중간에 다른 Element가 끼어들어도</u>
+          <span>선택이 된다</span>
+        </p>
+        <p>
+          하지만 <span>직속 형제가 아닌 Element나</span>
+          <i>이전에 먼저 나타난 Element (즉, "형" Element)는</i>
+          <span>선택이 되지 않는다.</span>
+        </p>
+      </article>
+
     </section>
-    <section class="Card">
-      <h1></h1>
-      <p></p>
+    <section id="S5-Demo" class="Card">
+      <h1>Select by Attributes</h1>
+      <style>
+        [data-flavor=apple] {
+          color: #e05858;
+        }
+
+        [data-flavor|='lime'] {
+          color: #7ec450;
+        }
+
+        [data-flavor~=berry] {
+          color: #3f99ff;
+        }
+
+        [data-flavor^=linux] {
+          text-decoration: underline;
+        }
+
+        [data-flavor$=mint] {
+          color: #58c29e;
+        }
+
+        [data-flavor*=e] {
+          font-weight: bold;
+        }
+      </style>
+      <pre><code class="language-css">
+[data-flavor=apple] { color: #e05858; }
+[data-flavor|='lime'] { color: #7ec450; }
+[data-flavor~=berry] { color: #3f99ff; }
+[data-flavor^=linux] { text-decoration: underline; }
+[data-flavor$=mint] { color: #58c29e; }
+[data-flavor*=e] { font-weight: bold; }
+</code></pre>
+      <article>
+        <p>Selector를 테스트하기 위해 아래 Element들은 일단 div로 구성했다</p>
+        <div data-flavor="apple"><code>apple</code> => 사과맛</div>
+        <div data-flavor="apple pie"><code>apple pie</code> => 난 안 사과맛</div>
+        <div data-flavor="lime"><code>lime</code> => 라임맛</div>
+        <div data-flavor="lime-soda"><code>lime-soda</code> => 라임맛</div>
+        <div data-flavor="zerocalorie-lime-soda"><code>zerocalorie-lime-soda</code> => 라임맛 아님</div>
+        <div data-flavor="zerocalorie lime-soda"><code>zerocalorie lime-soda</code> => 라임맛 아님</div>
+        <div data-flavor="soda-lime"><code>soda-lime</code> => 라임맛 아님</div>
+        <div data-flavor="lime soda"><code>lime soda</code> => 라임맛 아님</div>
+        <div data-flavor="blue berry"><code>blue berry</code> => 블루베리맛</div>
+        <div data-flavor="berry blue"><code>berry blue</code> => 블루베리맛</div>
+        <div data-flavor="blue-berry"><code>blue-berry</code> => 블루베리맛 아님</div>
+        <div data-flavor="blueberry"><code>blueberry</code> => 블루베리 아님</div>
+        <div data-flavor="linux mint"><code>linux mint</code> => 세상에서 가장 빡센 리눅스</div>
+        <div data-flavor="linux-like"><code>linux-like</code> => 리눅스 비스무리한</div>
+      </article>
     </section>
-    <section class="Card">
-      <h1></h1>
-      <p></p>
+    <section id="S6-Demo" class="Card">
+      <h1>Pseudo-Class</h1>
+      <style>
+        a:active {
+          color: red;
+        }
+      </style>
+      <pre data-filename="/css/primary.css"><code class="language-css">
+.Card {
+  /* ... */
+  box-shadow: 3px 3px 6px var(--box_shadow_color);
+  transition: box-shadow 0.1s ease-in;
+}
+
+.Card:hover {
+  box-shadow: 0 0 10px white, 3px 3px 6px var(--box_shadow_color);
+}
+
+a {
+  color: rgb(18, 177, 156);
+  text-decoration: none;
+  transition: color 0.1s ease-in;
+
+  &:hover {
+    color: rgb(162, 0, 255);
+  }
+}
+</code></pre>
+      <pre><code class="language-css">
+a:active {
+  color: red;
+}
+</code></pre>
+      <pre data-filename="/w/w.css"><code class="language-css">
+main a:visited:not(:hover) {
+  color: rgb(17, 104, 175);
+}
+
+@media (prefers-color-scheme: dark) {
+  main a:visited:not(:hover) {
+    color: rgb(58, 153, 216);
+  }
+}
+</code></pre>
+      <article>
+        <p>
+          이 사이트에서 Card 클래스가 적용된 모든 Element는 마우스가 닿으면 스타일이 바뀌는 것을 확인할 수 있다.
+          그리고 <a href="#">링크</a>도 마우스에 반응하는 것을 확인할 수 있다.
+        </p>
+        <p>
+          또한 이 페이지에 한해서 <a href="#">링크</a>를 누르고 있는 동안 빨간색으로 바뀐다. <code>/w/*</code> 페이지의 모든 링크는 방문 기록이 있으면 파란색으로 나타난다. 이
+          페이지는 <code>/w/w.css</code> 스타일시트가 <span class="Emp">적용되지 않았으므로</span> 방문한 링크가 다른 색으로 표시되지 않는다.
+        </p>
+      </article>
+    </section>
+    <section id="S7-Demo">
+      <h1>Pseudo-Element</h1>
+<pre data-filename="/css/common.css"><code class="language-css">
+pre[data-filename]::before {
+  content: attr(data-filename);
+  /* ... */
+}
+</code></pre>
     </section>
   </main>
 </body>
-<script src="/js/component.js" defer></script>
-<script src="/js/view.js" defer></script>
-<link rel="stylesheet" href="/vendor/highlight/github.min.css">
-<link rel="stylesheet" href="/vendor/highlight/github-dark.min.css">
-<script src="/vendor/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
+<script src="/js/component.js"></script>
+<script src="/js/view.js"></script>
+<script>
+  window.truncateEmptyLines()
+  hljs.highlightAll();
+</script>
+
 </html>
