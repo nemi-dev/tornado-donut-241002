@@ -34,6 +34,19 @@ nav {
   align-self: start;
 }
 
+nav > ul {
+  padding: 0;
+}
+
+nav > ul > li {
+  display: block;
+}
+
+nav > ul > li > a {
+  display: block;
+  padding: 8px;
+}
+
 table.infobox, figure, div.tright, .sidebar, .side-box-right {
   float: right;
   clear: right;
