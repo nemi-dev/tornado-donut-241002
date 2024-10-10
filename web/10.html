@@ -12,22 +12,8 @@
   <link href="/vendor/highlight/github-dark.min.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
   <script src="/vendor/highlight.min.js"></script>
   <style>
-    pre:not([data-filename]) {
-      position: relative;
-    }
-
     pre:not([data-filename])::before {
-      position: absolute;
       content: "<style>";
-      top: 8px;
-      right: 8px;
-      display: inline-block;
-      padding: 4px;
-      font-size: 80%;
-      opacity: 0.8;
-      border: 1px solid rgba(179, 229, 245, 0.637);
-      border-radius: 8px;
-      pointer-events: none;
     }
   </style>
 </head>
@@ -38,7 +24,7 @@
   </header>
   <main class="ResponsiveWrapper">
     <section id="S1-Demo" class="Card">
-      <h1>Descendants</h1>
+      <h2>Descendants</h2>
       <style>
         article span.Emp {
           font-weight: 900;
@@ -62,10 +48,10 @@ article span.Emp {
       <article>
         <p>
           이것은 첫 번째 문단이다. 그리고 이것은 <span class="Emp">스타일 적용된</span> 요소이다.
-        <p>참고 : P 태그 안의 P 태그는 자동으로 빠져나온다. 비슷하게 h1~h6 태그 및 블록 레벨 태그도 자동으로 빠져나온다. 그래서 이런 식으로 자손 선택자를 쓰면 안된다.</p>
+        <p>참고 : P 태그 안의 P 태그는 자동으로 빠져나온다. 비슷하게 h2~h6 태그 및 블록 레벨 태그도 자동으로 빠져나온다. 그래서 이런 식으로 자손 선택자를 쓰면 안된다.</p>
         <pre><code class="language-css">
 p p { /* ... */ }
-p h1 { /* ... */ }
+p h2 { /* ... */ }
 </code></pre>
         <h2>헉!! 진짜네!!</h2>
         </p>
@@ -76,7 +62,7 @@ p h1 { /* ... */ }
       </article>
     </section>
     <section id="S2-Demo" class="Card">
-      <h1>Direct Child</h1>
+      <h2>Direct Child</h2>
       <style>
         #S2-Demo>article>div {
           border: 1px solid white;
@@ -108,7 +94,7 @@ p h1 { /* ... */ }
 
     </section>
     <section id="S3-Demo" class="Card">
-      <h1>Adjacent</h1>
+      <h2>Adjacent</h2>
       <style>
         #S3-Demo i+span {
           font-weight: 900;
@@ -135,7 +121,7 @@ p h1 { /* ... */ }
       </article>
     </section>
     <section id="S4-Demo" class="Card">
-      <h1>Sibling</h1>
+      <h2>Sibling</h2>
       <style>
         #S4-Demo i~span {
           font-weight: 900;
@@ -165,7 +151,7 @@ p h1 { /* ... */ }
 
     </section>
     <section id="S5-Demo" class="Card">
-      <h1>Select by Attributes</h1>
+      <h2>Select by Attributes</h2>
       <style>
         [data-flavor=apple] {
           color: #e05858;
@@ -218,7 +204,7 @@ p h1 { /* ... */ }
       </article>
     </section>
     <section id="S6-Demo" class="Card">
-      <h1>Pseudo-Class</h1>
+      <h2>Pseudo-Class</h2>
       <style>
         a:active {
           color: red;
@@ -273,7 +259,7 @@ main a:visited:not(:hover) {
       </article>
     </section>
     <section id="S7-Demo" class="Card">
-      <h1>Pseudo-Element</h1>
+      <h2>Pseudo-Element</h2>
 <pre data-filename="/css/common.css"><code class="language-css">
 pre[data-filename]::before {
   content: attr(data-filename);
@@ -286,8 +272,16 @@ pre:not([data-filename])::before {
   /* ... */
 }
 </code></pre>
+      <article>
+        &lt;pre&gt;는 코드 블록으로 자주 쓰이는 태그이다. &lt;pre&gt; 태그에 pseudo-element를 추가하여 각 코드가 어느 파일에 속해 있는지를 표시하였다.
+        단, 이 페이지에서만 사용된 코드를 나타낸 코드 블록은 자동으로 &lt;style&gt;란 텍스트가 보이도록 했다.
+      </article>
     </section>
   </main>
+  <h1>Awesome form using pseudo</h1>
+  <div class="ResponsiveWrapper">
+    
+  </div>
 </body>
 <script src="/js/component.js"></script>
 <script src="/js/view.js"></script>
