@@ -272,11 +272,17 @@ main a:visited:not(:hover) {
         </p>
       </article>
     </section>
-    <section id="S7-Demo">
+    <section id="S7-Demo" class="Card">
       <h1>Pseudo-Element</h1>
 <pre data-filename="/css/common.css"><code class="language-css">
 pre[data-filename]::before {
   content: attr(data-filename);
+  /* ... */
+}
+</code></pre>
+<pre><code class="language-css">
+pre:not([data-filename])::before {
+  content: "&lt;style&gt;";
   /* ... */
 }
 </code></pre>

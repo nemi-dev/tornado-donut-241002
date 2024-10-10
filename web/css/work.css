@@ -2,8 +2,8 @@ header {
   padding-block: 1svh;
 }
 
-.Card {
-  margin-block-end: 20px;
+pre {
+  white-space: pre-wrap;
 }
 
 @media screen and (min-width: 769px) {
