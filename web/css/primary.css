@@ -16,7 +16,7 @@
   background-color: var(--back, #ffffff);
   font-family: Inter, "Pretendard Variable", system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-optical-sizing: auto;
-  font-weight: 300;
+  font-weight: 400;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -44,7 +44,11 @@ pre {
   font-weight: initial;
 }
 
-pre, code {
+pre code {
+  font-weight: 500;
+}
+
+pre, code, .monospace {
   font-family: "Source Code Pro", monospace;
   font-optical-sizing: auto;
   font-size: 14px;

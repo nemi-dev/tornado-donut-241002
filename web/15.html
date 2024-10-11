@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15. Functions</title>
+  <link rel="stylesheet" type="text/css" href="/css/common.css">
+  <link rel="stylesheet" type="text/css" href="/css/primary.css">
+  <link rel="stylesheet" type="text/css" href="/css/work.css">
+  <link href="/vendor/highlight/github.min.css" rel="stylesheet" media="(prefers-color-scheme: light)">
+  <link href="/vendor/highlight/github-dark.min.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
+  <script src="/vendor/highlight.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Functions</h1>
+  </header>
+  <main class="ResponsiveWrapper">
+    <section class="Card">
+      <h2>Functions & Variables</h2>
+      <script reflect>
+        function runS01() {
+          function addNumber() {
+
+          }
+        }
+      </script>
+    </section>
+    <section class="Card">
+      <h2>Variable Scope</h2>
+      <script reflect>
+        function runS01_2() {
+          function addNumber() {
+
+          }
+        }
+      </script>
+    </section>
+    <section class="Card">
+      <h2>Hoisting Problem</h2>
+      <article>
+        변수를 뒤에서 선언하지만, 앞에서 선언한 것처럼 끌어올린다. 실전에서 이렇게 쓰이지는 않는다.
+        <div></div>
+      </article>
+      <script reflect>
+        function runS02() {
+          var x = 10
+          function displayNumber() {
+            console.log(`x is ${x}`)
+            console.log(`y is ${y}`)
+            var y = 20
+          }
+
+          displayNumber()
+        }
+      </script>
+      <button onclick="runS02()">Run</button>
+    </section>
+    <section class="Card">
+      <h2>Re-define/Reassign Problem</h2>
+      <article>
+        선언된 변수를 또 또 또 선언할 수 있다. 다른 언어에서는 상상도 할 수 없는 일
+        <div></div>
+      </article>
+      <script reflect>
+        function runS03() {
+          function addNumber(n1, n2) {
+            return n1 + n2
+          }
+          var sum = addNumber(10, 20);
+          console.log(sum);
+          sum = 50;
+          console.log(sum);
+          var sum = 100;
+          console.log(sum);
+        }
+      </script>
+      <button onclick="runS03()">Run</button>
+    </section>
+    <section class="Card">
+      <h2>let/const</h2>
+      <article>
+        <h3>let</h3>
+        <p>
+          let은 한 번만 선언할 수 있고, 블록 내에서만 유지된다. 재선언하면 아예 Syntax Error가 나타난다...
+        </p>
+        <pre data-filename="error"><code>
+        function runS05_01() {
+          let a = 1
+          console.log(a)
+          a = 2
+          console.log(a)
+          let a = 3 // syntax error
+        }
+        </code></pre>
+        <p>
+          let의 (그나마) 바른 사용 방법
+        </p>
+        <script reflect>
+          function runS04() {
+            function sigma(n) {
+              let sum = 0;
+              for (let i = 1; i <= n; i++) {
+                sum += i
+              }
+              return sum
+            }
+
+            let sum = sigma(39)
+            document.querySelector("#S04_out").innerText = sum
+          }
+        </script>
+        <div><button onclick="runS04()">Run</button></div>
+        <fieldset>
+          <legend>Out</legend>
+          <div>
+            <span class="monospace">sum = </span>
+            <output id="S04_out"></output>
+          </div>
+        </fieldset>
+      </article>
+      <article>
+        <h3>const</h3>
+        <p>
+          const는 한 번만 선언할 수 있고, 값이 한 번 할당된 const는 재할당을 할 수 없다.
+        </p>
+        <script reflect>
+          function runS05() {
+            const out = document.querySelector("#S05_out")
+
+            function cryptoRandom() {
+              const arr = new Uint8Array(128)
+              crypto.getRandomValues(arr)
+            }
+
+            out.innerText = Math.random() * 300000
+          }
+        </script>
+        <div><button onclick="runS05()">Run </button></div>
+        <fieldset>
+          <legend>Out</legend>
+          <div>
+            <span class="monospace">out = </span>
+            <output id="S05_out"></output>
+          </div>
+        </fieldset>
+      </article>
+    </section>
+  </main>
+</body>
+<script src="/js/component.js"></script>
+<script src="/js/view.js"></script>
+<script src="./reflect.js"></script>
+<script>
+  Array.from(document.querySelectorAll("script[reflect]")).forEach(reflect)
+  window.ppre()
+</script>
+
+</html>
