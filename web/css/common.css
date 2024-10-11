@@ -1,3 +1,32 @@
+:root {
+  --back: #111318;
+  --box_shadow_color: #06090a;
+  --focused_color: rgb(40, 205, 255);
+  --focused_shadow_color: rgba(40, 205, 255, 0.5);
+  --fulfilled_color: rgb(0, 255, 160);
+  --fulfilled_shadow_color: rgba(0, 255, 160, 0.5);
+  --issued_color: rgb(255, 56, 72);
+  --issued_shadow_color: rgba(255, 56, 72, 0.5);
+  
+  --border_color: #727d80bb;
+  --nav_height: 50px;
+  
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --back: #ffffff;
+    --box_shadow_color: #b1b7bb;
+    --focused_color: rgb(30, 179, 200);
+    --focused_shadow_color: rgba(30, 179, 200, 0.5);
+    --fulfilled_color: rgb(15, 163, 82);
+    --fulfilled_shadow_color: rgba(15, 163, 82, 0.5);
+    --issued_color: rgb(216, 41, 41);
+    --issued_shadow_color: rgba(216, 41, 41, 0.5);
+  }
+}
+
 site-logo {
   display: flex;
   align-items: baseline;
@@ -53,7 +82,14 @@ site-nav site-logo {
   font-size: 24px;
 }
 
-[wiki-list] a {
+ul, stacks-list {
+  display: block;
+  border-radius: 8px;
+  border: 1px solid var(--border_color);
+  padding: 0;
+}
+
+:is([wiki-list], stacks-list) a {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -76,12 +112,18 @@ pre {
   box-sizing: border-box;
   background-color: var(--back);
   box-shadow: 3px 3px 6px var(--box_shadow_color);
-  border: 1px solid rgba(126, 130, 131, 0.486);
+  border: 1px solid var(--border_color, #727d80bb);
   transition: box-shadow 0.1s ease-in;
 }
 
 .Card:hover {
   box-shadow: 0 0 10px white, 3px 3px 6px var(--box_shadow_color);
+}
+
+@media (prefers-color-scheme: light) {
+  .Card:hover {
+    box-shadow: 0 0 10px rgb(48, 70, 102), 3px 3px 6px var(--box_shadow_color);
+  }
 }
 
 
@@ -154,3 +196,83 @@ pre::before {
 }
 
 
+
+
+
+
+a.UseButton,button,input:is([type=submit],[type=reset]) {
+  appearance: none;
+  color: var(--button_text, white);
+  background-color: var(--button_color, rgb(0, 119, 255));
+  border: none;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: all 0.1s;
+  font-size: inherit;
+  transform: translate(0);
+
+  &:active {
+    transform: translate(2px, 2px);
+  }
+}
+
+fieldset {
+  padding: 8px;
+  border: 1px solid var(--border_color);
+  border-radius: 8px;
+}
+
+input:is(
+  [type="text"],
+  [type="password"],
+  [type="email"],
+  [type="url"],
+  [type="tel"],
+  [type="number"],
+  [type="search"],
+  [type="datetime-local"]),
+textarea {
+  color: inherit;
+  background-color: var(--back);
+  font-size: inherit;
+  font-weight: bolder;
+  border: 1px solid rgba(156, 192, 180, 0.5);
+  border-radius: 8px;
+  padding: 4px;
+  transition-property: border, box-shadow;
+  transition-duration: 0.1s;
+
+  &:required:valid {
+    border-color: var(--fulfilled_color);
+    box-shadow: 0 0 5px var(--fulfilled_shadow_color);
+  }
+
+  &.issue:required {
+    border-color: var(--issued_color);
+    box-shadow: 0 0 5px var(--issued_shadow_color);
+  }
+
+  &:optional:invalid {
+    border-color: var(--issued_color);
+    box-shadow: 0 0 5px var(--issued_shadow_color);
+  }
+
+  &:focus {
+    border-color: var(--focused_color);
+    box-shadow: 0 0 5px var(--focused_shadow_color);
+  }
+}
+
+.FocusWithinView {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #00000000;
+  transition-property: border, box-shadow;
+  transition-duration: 0.1s;
+  border-radius: 8px;
+}
+
+:is(a.UseButton,button,input):focus,.FocusWithinView:focus-within {
+  border-color: var(--focused_color);
+  box-shadow: 0 0 5px var(--focused_shadow_color);
+}

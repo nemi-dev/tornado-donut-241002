@@ -10,9 +10,6 @@
 :root {
   color-scheme: light dark;
 
-  --back: #ffffff;
-  --box_shadow_color: #b1b7bb;
-  --nav_height: 50px;
   background-color: var(--back, #ffffff);
   font-family: Inter, "Pretendard Variable", system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-optical-sizing: auto;
@@ -71,12 +68,22 @@ h1 {
 
 
 
-
 ul {
   margin: 0;
-  padding: 20px;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid rgba(126, 130, 131, 0.486);
+  padding: 0;
 }
 
+li {
+  display: block;
+  border-bottom: 1px solid rgba(126, 130, 131, 0.486);
+}
+
+li:last-child {
+  border-bottom: none;
+}
 
 
 .CenterWrapper {
@@ -100,12 +107,6 @@ ul {
   flex-wrap: wrap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --back: #111318;
-    --box_shadow_color: #06090a;
-  }
-}
 
 @media screen and (min-width: 769px) {
   :root {

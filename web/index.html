@@ -27,19 +27,6 @@
 
     ul {
       margin-top: 10px;
-      display: block;
-      border-radius: 8px;
-      border: 1px solid rgba(126, 130, 131, 0.486);
-      padding: 0;
-    }
-
-    li {
-      display: block;
-      border-bottom: 1px solid rgba(126, 130, 131, 0.486);
-    }
-
-    li:last-child {
-      border-bottom: none;
     }
 
     li > a {
@@ -50,14 +37,11 @@
 </head>
 
 <body>
+  <site-nav></site-nav>
   <header>
     <h1 style="font-size: 45px;"><site-logo></site-logo></h1>
   </header>
   <main class="ResponsiveWrapper">
-    <div class="Card">
-      <h2>My Stacks</h2>
-      <ul wiki-list></ul>
-    </div>
     <div class="Card">
       <h2>Works</h2>
       <ul>
@@ -65,12 +49,14 @@
         <li><a href="./11.html">11 - CSS Transform & Transition</a></li>
         <li><a href="./12.html">12 - Responsive Web</a></li>
         <li><a href="./13.html">13 - JavaScript</a></li>
-        <li><a href="#">e</a></li>
+        <li><a href="./15.html">15 - Functions</a></li>
+        <li><a href="./16.html">16 - Objects & Classes</a></li>
       </ul>
     </div>
     <div class="Card">
       <h2>Playgrounds</h2>
       <ul>
+        <li><a href="./lunchmemo.html">Lunch Memo</a></li>
         <li><a href="./lunchmenu.html">Lunch Menu</a></li>
         <li><a href="./inputtest.html">Input Test</a></li>
         <li><a href="./hash.html">Hash test</a></li>
@@ -79,8 +65,9 @@
       </ul>
     </div>
 
-    <div class="Card">
-
+    <div class="Card" style="grid-column: 1 / -1;">
+      <h2>My Stacks</h2>
+      <stacks-list></stacks-list>
     </div>
   </main>
 </body>

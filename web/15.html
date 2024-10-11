@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>15. Functions</title>
+  <title>15. Functions & Events</title>
   <link rel="stylesheet" type="text/css" href="/css/common.css">
   <link rel="stylesheet" type="text/css" href="/css/primary.css">
   <link rel="stylesheet" type="text/css" href="/css/work.css">
@@ -15,11 +15,11 @@
 
 <body>
   <header>
-    <h1>Functions</h1>
+    <h1>Functions & Events</h1>
   </header>
   <main class="ResponsiveWrapper">
     <section class="Card">
-      <h2>Functions & Variables</h2>
+      <h2>Functions & Events</h2>
       <script reflect>
         function runS01() {
           function addNumber() {
@@ -130,12 +130,14 @@
           function runS05() {
             const out = document.querySelector("#S05_out")
 
-            function cryptoRandom() {
-              const arr = new Uint8Array(128)
+            function createRandom() {
+              const arr = new Uint8Array(16)
               crypto.getRandomValues(arr)
+              const v = new BigUint64Array(arr.buffer)
+              return v
             }
 
-            out.innerText = Math.random() * 300000
+            out.innerText = createRandom().join(", ")
           }
         </script>
         <div><button onclick="runS05()">Run </button></div>

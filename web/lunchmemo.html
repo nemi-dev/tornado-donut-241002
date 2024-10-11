@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LunchMenu</title>
+  <link rel="stylesheet" type="text/css" href="/css/common.css">
+  <link rel="stylesheet" type="text/css" href="/css/primary.css">
+  <style>
+    html body ul {
+      padding: 0;
+      padding-inline-start: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>오늘 뭐 먹을래?</h1>
+  <ul id="RealList"></ul>
+  <ul>
+    <li>
+      <form action="" id="Form">
+        <input type="text" name="MainInput" id="MainInput">
+        <input type="submit" id="SubmitInput" hidden>
+      </form>
+    </li>
+  </ul>
+</body>
+<script>
+  const input = document.querySelector("#MainInput")
+  const ul = document.querySelector("#RealList")
+  function addList(name) {
+    if (!name) return
+    const li = document.createElement("li")
+    const span = document.createElement("span")
+    const button = document.createElement("button")
+    span.append(name)
+    button.append("삭제")
+    button.addEventListener("click", e => {
+      li.remove()
+    })
+    li.append(span, button)
+    ul.append(li)
+  }
+  document.querySelector("form").addEventListener("submit", e => {
+    e.preventDefault()
+    addList(input.value)
+    input.value = ""
+  })
+</script>
+</html>

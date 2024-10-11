@@ -9,24 +9,31 @@ function escapeHtml(unsafe) {
 
 /**
  * 
- * @param {HTMLScriptElement} je 
+ * @param {HTMLScriptElement | HTMLStyleElement} el 
  */
-function reflect(je) {
-  let js = je.innerText
+function reflect(el) {
+  let txt = el.innerText
+  let lang;
 
-  js = js
-    .replace(/^\s*function\s+[\d\w_]+\s*\(\)\s*\{/, "")
-    .replace(/\}\s*$/, "");
-  js = __truncateLine(js)
+  if (el instanceof HTMLScriptElement) {
+    txt = txt
+      .replace(/^\s*function\s+[\d\w_]+\s*\(\)\s*\{/, "")
+      .replace(/\}\s*$/, "");
+    lang = "lang-javascript"
+  } else {
+    lang = "lang-css"
+  }
+
+  txt = __truncateLine(txt)
 
   const pre = document.createElement("pre")
-  pre.dataset["filename"] = "<script>"
+  pre.dataset["filename"] = `<${el.tagName.toLowerCase()}>`
 
   const code = document.createElement("code")
-  code.classList.add("lang-javascript")
+  code.classList.add(lang)
 
-  code.append(js)
+  code.append(txt)
 
   pre.append(code)
-  je.parentElement.insertBefore(pre, je.nextElementSibling)
+  el.parentElement.insertBefore(pre, el.nextElementSibling)
 }
