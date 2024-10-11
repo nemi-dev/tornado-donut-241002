@@ -11,6 +11,7 @@
     ::-webkit-scrollbar {
       display: none;
     }
+
     body {
       max-width: 100vw;
       overflow-x: hidden;
@@ -40,11 +41,14 @@
       grid-template-columns: 360px 1fr;
       grid-template-rows: 1fr;
     }
+
     aside {
       height: calc(100svh - var(--nav_height));
       overflow-y: scroll;
       position: relative;
+      color: white;
     }
+
     main {
       padding: 0;
       width: 100%;
@@ -54,6 +58,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      color: white;
     }
 
     ul {
@@ -64,6 +69,7 @@
       justify-content: space-evenly;
       gap: 16px;
     }
+
     summary {
       background-color: black;
       position: sticky;
@@ -80,6 +86,7 @@
     details[open] summary {
       background-color: rgb(190, 44, 44);
     }
+
     li {
       border: 1px solid white;
       box-sizing: border-box;
@@ -90,38 +97,72 @@
       border-radius: 9px;
       cursor: pointer;
     }
+
     li:last-child {
       border-bottom: 1px solid white;
     }
+
     li img {
       display: block;
       max-width: 100%;
     }
+
     #ImageContainer {
       position: relative;
       width: 100%;
       height: 50vh;
       overflow-x: hidden;
     }
+
     #MenuName {
       font-size: 30px;
       font-weight: 900;
       text-align: center;
     }
+
     #Price {
       font-size: 24px;
       text-align: center;
     }
+
     #ImageContainer img {
       transition: all 0.1s ease-out;
       transform: translateX(0);
     }
+
     #ImageContainer img.Coming {
       transform: translateX(50vh);
     }
+
     #ImageContainer img.Finished {
       transition: all 0.1s linear;
       transform: translateX(-100vh);
+    }
+
+    #Receipt {
+      position: fixed;
+      bottom: 0px;
+      right: 10px;
+      width: 240px;
+      padding: 9px;
+      background-color: rgb(216, 216, 216);
+      border-color: gray;
+      color: black;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    #Receipt h3 {
+      font-weight: 900;
+      text-align: center;
+      grid-column: 1 / -1;
+    }
+
+    #Receipt .MenuName {
+      font-weight: 700;
+    }
+    #Receipt .Price {
+      text-align: right;
     }
   </style>
 </head>
@@ -141,13 +182,20 @@
       </div>
     </div>
   </div>
+  <div id="Receipt">
+    <h3>살떨리는 영수증</h3>
+  </div>
 </body>
 <script>
 
   const imageContainer = document.querySelector('#ImageContainer')
   const selectedMenuName = document.querySelector('#MenuName')
   const selectedMenuPrice = document.querySelector('#Price')
+  const receipt = document.querySelector("#Receipt")
 
+  function priceText(n) {
+    return `${n.toLocaleString()}원`
+  }
   function createMenu(name, menu) {
     const el = document.createElement("li")
     const img = document.createElement("img")
@@ -157,14 +205,15 @@
     const nameEl = document.createElement("span")
     nameEl.append(name)
 
-    const priceText = `${menu.price.toLocaleString()}원`
+    const _priceText = priceText(menu.price)
     const priceEl = document.createElement("span")
-    priceEl.append(priceText)
+    priceEl.append(_priceText)
 
 
     el.append(img, nameEl, priceEl)
     el.onclick = ev => {
-      orderMenu(name, img.src, priceText)
+      orderMenu(name, img.src, menu.price)
+
     }
     return el
   }
@@ -173,7 +222,7 @@
     const summary = document.createElement("summary")
     summary.innerText = cname
     const ul = document.createElement("ul")
-    
+
     for (const menuName of menuType.order) {
       const menu = menuType.byKey[menuName]
       ul.append(createMenu(menuName, menu))
@@ -188,12 +237,22 @@
   function orderMenu(name, imgsrc, price) {
     if (imageContainer.firstElementChild) imageContainer.removeChild(imageContainer.firstElementChild)
     selectedMenuName.innerText = name
-    selectedMenuPrice.innerText = price
+    selectedMenuPrice.innerText = priceText(price)
     const im = document.createElement("img")
     im.classList.add("Coming")
     im.src = imgsrc
     imageContainer.append(im)
     window.setTimeout(() => im.classList.remove("Coming"), 1)
+
+    const a = document.createElement("span")
+    a.classList.add("MenuName")
+    a.innerText = name
+
+    const b = document.createElement("span")
+    b.classList.add("Price")
+    b.innerText = priceText(price)
+
+    receipt.append(a, b)
   }
 
   !((async () => {
@@ -210,4 +269,5 @@
 </script>
 <script src="/js/component.js"></script>
 <script src="/js/view.js"></script>
+
 </html>
