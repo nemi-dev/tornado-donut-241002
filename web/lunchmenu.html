@@ -141,28 +141,44 @@
 
     #Receipt {
       position: fixed;
-      bottom: 0px;
+      bottom: -10px;
       right: 10px;
       width: 240px;
       padding: 9px;
+      padding-bottom: 30px;
       background-color: rgb(216, 216, 216);
       border-color: gray;
       color: black;
       display: grid;
       grid-template-columns: 1fr 1fr;
+      animation: stress var(--duration, 1.5s) linear infinite;
     }
 
     #Receipt h3 {
       font-weight: 900;
       text-align: center;
-      grid-column: 1 / -1;
     }
 
+    #Receipt :is(h3, hr) {
+      grid-column: 1 / -1;
+    }
     #Receipt .MenuName {
       font-weight: 700;
     }
     #Receipt .Price {
       text-align: right;
+    }
+
+    @keyframes stress {
+      0%, 16%, 33%, 50%, 67%, 83% {
+        transform: translate(0, 0);
+      }
+      8% { transform: translate(var(--mx1, 0px), var(--my1, 0px)); }
+      25% { transform: translate(var(--mx3, 0px), var(--my3, 0px)); }
+      42% { transform: translate(var(--mx5, 0px), var(--my5, 0px)); }
+      59% { transform: translate(var(--mx2, 0px), var(--my2, 0px)); }
+      75% { transform: translate(var(--mx4, 0px), var(--my4, 0px)); }
+      92% { transform: translate(var(--mx6, 0px), var(--my6, 0px)); }
     }
   </style>
 </head>
@@ -183,90 +199,13 @@
     </div>
   </div>
   <div id="Receipt">
-    <h3>살떨리는 영수증</h3>
+    <h3>영수증</h3>
+    <hr>
+    <span>합계</span>
+    <span id="Total" class="Price">0원</span>
   </div>
 </body>
-<script>
-
-  const imageContainer = document.querySelector('#ImageContainer')
-  const selectedMenuName = document.querySelector('#MenuName')
-  const selectedMenuPrice = document.querySelector('#Price')
-  const receipt = document.querySelector("#Receipt")
-
-  function priceText(n) {
-    return `${n.toLocaleString()}원`
-  }
-  function createMenu(name, menu) {
-    const el = document.createElement("li")
-    const img = document.createElement("img")
-    img.src = `/img/udon/${name}.png`
-    img.alt = name
-
-    const nameEl = document.createElement("span")
-    nameEl.append(name)
-
-    const _priceText = priceText(menu.price)
-    const priceEl = document.createElement("span")
-    priceEl.append(_priceText)
-
-
-    el.append(img, nameEl, priceEl)
-    el.onclick = ev => {
-      orderMenu(name, img.src, menu.price)
-
-    }
-    return el
-  }
-
-  function createMenuType(cname, menuType) {
-    const summary = document.createElement("summary")
-    summary.innerText = cname
-    const ul = document.createElement("ul")
-
-    for (const menuName of menuType.order) {
-      const menu = menuType.byKey[menuName]
-      ul.append(createMenu(menuName, menu))
-    }
-
-    const el = document.createElement("details")
-    el.append(summary, ul)
-
-    return el
-  }
-
-  function orderMenu(name, imgsrc, price) {
-    if (imageContainer.firstElementChild) imageContainer.removeChild(imageContainer.firstElementChild)
-    selectedMenuName.innerText = name
-    selectedMenuPrice.innerText = priceText(price)
-    const im = document.createElement("img")
-    im.classList.add("Coming")
-    im.src = imgsrc
-    imageContainer.append(im)
-    window.setTimeout(() => im.classList.remove("Coming"), 1)
-
-    const a = document.createElement("span")
-    a.classList.add("MenuName")
-    a.innerText = name
-
-    const b = document.createElement("span")
-    b.classList.add("Price")
-    b.innerText = priceText(price)
-
-    receipt.append(a, b)
-  }
-
-  !((async () => {
-    const udon = await fetch('/udon.json').then(res => res.json())
-
-    const main = document.querySelector('main')
-    const aside = document.querySelector('aside')
-
-    for (const [cname, menuType] of Object.entries(udon)) {
-      aside.append(createMenuType(cname, menuType))
-
-    }
-  })())
-</script>
+<script src="./lunchmenu.js"></script>
 <script src="/js/component.js"></script>
 <script src="/js/view.js"></script>
 
