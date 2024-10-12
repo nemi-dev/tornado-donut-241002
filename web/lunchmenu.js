@@ -21,7 +21,6 @@ function setIntense(price) {
     receipt.style.setProperty(`--mx${i + 1}`, `${x}px`)
     receipt.style.setProperty(`--my${i + 1}`, `${y}px`)
   }
-  console.log({ d, v })
   receipt.style.setProperty("--duration", v + 's')
 }
 
