@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>16. Objects</title>
+  <link rel="stylesheet" type="text/css" href="/css/common.css">
+  <link rel="stylesheet" type="text/css" href="/css/primary.css">
+  <link rel="stylesheet" type="text/css" href="/css/work.css">
+  <link href="/vendor/highlight/github.min.css" rel="stylesheet" media="(prefers-color-scheme: light)">
+  <link href="/vendor/highlight/github-dark.min.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
+  <script src="/vendor/highlight.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Objects</h1>
+    <div class="ResponsiveWrapper">
+      <section class="Card">
+        <h2>Getting started</h2>
+        <script reflect>
+          var date1 = new Date()
+          var date2
+
+          window.setTimeout(() => {
+            date2 = new Date()
+            document.querySelector('#S01_p01').innerText
+              = date1.toLocaleString() + "\n" + date2.toLocaleString()
+          }, 1000)
+        </script>
+        <fieldset>
+          <legend>Output</legend>
+          <div id="S01_p01"></div>
+        </fieldset>
+      </section>
+    </div>
+  </header>
+</body>
+<script src="/js/component.js"></script>
+<script src="/js/view.js"></script>
+<script src="./reflect.js"></script>
+<script>
+  Array.from(document.querySelectorAll("[reflect]")).forEach(reflect)
+  window.ppre()
+</script>
+
+</html>
