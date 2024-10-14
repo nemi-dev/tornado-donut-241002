@@ -177,3 +177,9 @@ li img {
   75% { transform: translate(var(--mx4, 0px), var(--my4, 0px)); }
   92% { transform: translate(var(--mx6, 0px), var(--my6, 0px)); }
 }
+
+.NewMenuLayout {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+}

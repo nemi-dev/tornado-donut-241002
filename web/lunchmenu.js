@@ -10,7 +10,12 @@ const selectedMenuName = document.querySelector('#MenuName')
 const selectedMenuPrice = document.querySelector('#Price')
 /** @type {HTMLElement} */
 const receipt = document.querySelector("#Receipt")
+
+const receiptText = receipt.querySelector("#ReceiptText")
 const totalView = document.querySelector("#Total")
+
+/** @type {HTMLDialogElement} */
+const newMenu = document.querySelector("#NewMenu")
 
 const insertBeforeHere = receipt.querySelector("hr")
 
@@ -154,7 +159,6 @@ function orderMenu(name, price) {
   b.classList.add("Price")
   b.innerText = priceText(price)
 
-  // receipt.append(a, b)
   receipt.insertBefore(a, insertBeforeHere)
   receipt.insertBefore(b, insertBeforeHere)
   total += price
@@ -194,4 +198,7 @@ document.querySelector("#RandomChoice").addEventListener("click", e => {
   for (const menu of udon2) {
     addMenu2(menu)
   }
+
+  newMenu.showModal()
+  // document.getElementById('CloseNewMenuDialog').addEventListener('click', e => newMenu.close())
 })())
