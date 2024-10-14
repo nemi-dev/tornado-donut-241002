@@ -19,6 +19,10 @@
     <div class="ResponsiveWrapper">
       <section class="Card">
         <h2>Getting started</h2>
+        <article>
+          객체는 "모든 것"이다.
+          객체는 JavaScript를 비롯한 모든 프로그래밍 언어에서 아주 붕요한 개념이다.
+        </article>
         <script reflect>
           var date1 = new Date()
           var date2
@@ -32,6 +36,68 @@
         <fieldset>
           <legend>Output</legend>
           <div id="S01_p01"></div>
+        </fieldset>
+      </section>
+      <section class="Card">
+        <h2>Arrays</h2>
+        <article>
+          "배열"은 앞에서 배웠지만, 배열을 "객체"로써 다시 알아보자.
+        </article>
+        <script reflect>
+          function runS02() {
+            // 아무것도 없는 배열
+            var voidLayer = new Array()
+
+            // 공간 5개가 있지만, 아무것도 없는 배열
+            // 이건 좀 심오하지만, 일단은 비어있다고만 알아두기
+            var emptyLayers = new Array(5)
+
+            // 월
+            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+            // 모든 배열은 `.length` 속성을 갖고 있다.
+            const out = document.querySelector('#S02_p01')
+            for (let i = 0; i < months.length; i++) {
+              out.innerText += months[i] + ' '
+            }
+          }
+        </script>
+        <fieldset>
+          <button onclick="runS02()">Run</button>
+        </fieldset>
+        <fieldset>
+          <legend>Output</legend>
+          <div id="S02_p01"></div>
+        </fieldset>
+        <article>
+          <h3>Object Identity</h3>
+          어떤 메서드들은 객체의 상태를 바꾸는 것도 있고, 객체 스스로 바뀌지 않고 새로운 객체를 만들어내는 것도 있다.
+        </article>
+        <script reflect>
+          function runS02_02() {
+            const output = document.querySelector('#S02_p02')
+            output.innerText = ''
+            const nums = [ 61, 97, 45, 126 ]
+            const chars = ['a', 's', 'd', 'f', 'g']
+            const nums_chars = nums.concat(chars)
+            const chars_nums = chars.concat(nums)
+            
+            output.innerText += `${nums_chars}\n`
+            output.innerText += `${chars_nums}\n`
+            output.innerText += `${nums}\n`
+            output.innerText += `${chars}\n`
+
+            nums.push(22, 18, 37)
+
+            output.innerText += `${nums}\n`
+          }
+        </script>
+        <fieldset>
+          <button onclick="runS02_02()">Run</button>
+        </fieldset>
+        <fieldset>
+          <legend>Output</legend>
+          <div id="S02_p02"></div>
         </fieldset>
       </section>
     </div>

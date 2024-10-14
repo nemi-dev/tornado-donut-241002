@@ -16,9 +16,9 @@ function reflect(el) {
   let lang;
 
   if (el instanceof HTMLScriptElement) {
-    txt = txt
+    let headless = txt
       .replace(/^\s*function\s+[\d\w_]+\s*\(\)\s*\{/, "")
-      .replace(/\}\s*$/, "");
+    if (txt != headless) txt = headless.replace(/\}\s*$/, "");
     lang = "lang-javascript"
   } else {
     lang = "lang-css"
