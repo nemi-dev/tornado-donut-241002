@@ -82,14 +82,12 @@ site-nav site-logo {
   font-size: 24px;
 }
 
-ul, stacks-list {
+li > a, stacks-list > a {
+  padding: 8px 12px;
   display: block;
-  border-radius: 8px;
-  border: 1px solid var(--border_color);
-  padding: 0;
 }
 
-:is([wiki-list], stacks-list) a {
+stacks-list a {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -102,9 +100,6 @@ main {
   padding-block: 5svh;
 }
 
-pre {
-  line-height: 1.2em;
-}
 
 .Card {
   padding: 8px;

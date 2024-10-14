@@ -1,15 +1,6 @@
 const noop = () => { }
 
 
-let injectDevicon = () => {
-  injectDevicon = noop
-  const linkElemet = document.createElement("link")
-  linkElemet.rel = "stylesheet"
-  linkElemet.type = "text/css"
-  linkElemet.href = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-  document.head.prepend(linkElemet)
-}
-
 let injectSiteNav = () => {
   injectSiteNav = noop
   if (document.querySelector("site-nav")) return
