@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clicker</title>
+  <script src="/vendor/jquery.min.js"></script>
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <style>
+    :root {
+      font-family: "Pretendard Variable", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      pad: 0;
+    }
+
+    .Wrapper {
+      width: 100vw;
+      height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &>#Button {
+        width: 50vw;
+        height: 24svh;
+        font-size: 3rem;
+        font-weight: 700;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="Wrapper">
+    <button id="Button"></button>
+  </div>
+</body>
+<script>
+  const state = {
+    count: 0
+  }
+
+  function inc() {
+    state.count += 1;
+    $("#Button").text(`${state.count}`)
+  }
+
+  $(document).ready(() => {
+    if (window.localStorage) {
+      let v;
+      if (v = window.localStorage.getItem('clicker/state')) {
+        Object.assign(state, JSON.parse(v))
+      }
+    }
+    $("#Button")
+      .text(`${state.count}`)
+      .on('click', inc)
+    window.onbeforeunload = () => {
+      if (window.localStorage) {
+        window.localStorage.setItem('clicker/state', JSON.stringify(state))
+      }
+    }
+  })
+</script>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Let's use jQuery for 6.02e55620923 times!</title>
+  <script src="/vendor/jquery.min.js"></script>
+</head>
+<style>
+  ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }
+</style>
+
+<body>
+  <button>Click me!</button>
+  <ul></ul>
+</body>
+<script>
+  $('button').on('click', () => $('ul').append($(`<li>${Math.random()}</li>`)))
+</script>
+
+</html>
