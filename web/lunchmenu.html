@@ -21,6 +21,7 @@
             <div id="MenuName">메뉴를 선택해주세요!</div>
             <div id="Price"></div>
             <button id="RandomChoice" style="--button_color: #fc3d3d;">아무거나!</button>
+            <button id="OpenNewMenuModal">메뉴 추가하기</button>
           </div>
         </main>
       </div>
@@ -34,10 +35,10 @@
     <span id="Total" class="Price">0원</span>
   </div>
   <dialog id="NewMenu">
-    <form action="" method="dialog">
+    <form id="NewMenuForm" action="" method="dialog">
       <div class="NewMenuLayout">
         <label for="NewMenuName">메뉴 이름</label>
-        <input type="text" id="NewMenuName" name="menuame" required>
+        <input type="text" id="NewMenuName" name="menuname" required>
         <label for="NewMenuPrice">가격</label>
         <input type="number" id="NewMenuPrice" name="menuprice" required>
         <label for="NewMenuCategory">메뉴 분류</label>

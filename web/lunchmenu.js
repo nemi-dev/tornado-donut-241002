@@ -15,7 +15,7 @@ const receiptText = receipt.querySelector("#ReceiptText")
 const totalView = document.querySelector("#Total")
 
 /** @type {HTMLDialogElement} */
-const newMenu = document.querySelector("#NewMenu")
+const newMenuDialog = document.querySelector("#NewMenu")
 
 const insertBeforeHere = receipt.querySelector("hr")
 
@@ -199,6 +199,19 @@ document.querySelector("#RandomChoice").addEventListener("click", e => {
     addMenu2(menu)
   }
 
-  newMenu.showModal()
-  // document.getElementById('CloseNewMenuDialog').addEventListener('click', e => newMenu.close())
+  document.querySelector('#CloseNewMenuDialog').addEventListener('click', e => {
+    newMenuDialog.close()
+    e.preventDefault()
+  })
+
+  /** @type {HTMLFormElement} */
+  const newMenuForm = document.querySelector("#NewMenuForm")
+  newMenuForm.addEventListener("submit", e => {
+    const m = Object.fromEntries((new FormData(newMenuForm)).entries())
+    addMenu2({name: m.menuname, price:m.menuprice, type: m.menucategory, brand: m.menubrand })
+  })
+
+  document.querySelector("#OpenNewMenuModal").addEventListener('click', e => {
+    newMenuDialog.showModal()
+  })
 })())

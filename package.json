@@ -15,5 +15,8 @@
   "dependencies": {
     "@netlify/functions": "^2.8.2",
     "gotrue-js": "^0.9.29"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.3.3"
   }
 }
