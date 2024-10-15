@@ -146,25 +146,43 @@ li img {
   background-color: rgb(216, 216, 216);
   border-color: gray;
   color: black;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+
   animation: stress var(--duration, 1.5s) linear infinite;
+  
+  & h3 {
+    font-weight: 900;
+    text-align: center;
+  }
+
+  & :is(h3, hr) {
+    grid-column: 1 / -1;
+  }
+
+  & .MenuName {
+    font-weight: 700;
+  }
+
+  & .Price {
+    text-align: right;
+  }
+
+  & #ReceiptText {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-#Receipt h3 {
-  font-weight: 900;
-  text-align: center;
-}
+/* #Receipt  */
 
-#Receipt :is(h3, hr) {
+/* #Receipt :is(h3, hr) {
   grid-column: 1 / -1;
-}
-#Receipt .MenuName {
+} */
+/* #Receipt .MenuName {
   font-weight: 700;
-}
-#Receipt .Price {
+} */
+/* #Receipt .Price {
   text-align: right;
-}
+} */
 
 @keyframes stress {
   0%, 16%, 33%, 50%, 67%, 83% {

@@ -4,4 +4,8 @@ type LunchMenu = {
   brand: str
   price: number
   img?: str
+  chance?: {
+    weight?: number
+    less?: number
+  }
 }

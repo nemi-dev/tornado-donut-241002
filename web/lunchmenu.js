@@ -1,7 +1,7 @@
 
 const LOG_BASE = Math.log(50)
 
-let udon;
+/** @type {LunchMenu[]} */
 let udon2;
 let total = 0
 const aside = document.querySelector('aside')
@@ -17,7 +17,6 @@ const totalView = document.querySelector("#Total")
 /** @type {HTMLDialogElement} */
 const newMenuDialog = document.querySelector("#NewMenu")
 
-const insertBeforeHere = receipt.querySelector("hr")
 
 /** @type {Map<string, [HTMLDetailsElement, Map<string, HTMLElement>]>} */
 const bm1 = new Map()
@@ -93,55 +92,21 @@ function addMenu2(menu) {
 
   el.append(img, nameEl, priceEl)
   el.onclick = ev => {
-    orderMenu(name, price)
+    // orderMenu(name, price)
+    orderMenu(menu)
   }
 
   de.append(el)
   return el
 }
 
-
-/** 메뉴를 추가합니다. */
-function createMenu(name, menu) {
-  const el = document.createElement("li")
-  const img = document.createElement("img")
-  img.src = `/img/udon/${name}.png`
-  img.alt = name
-
-  const nameEl = document.createElement("span")
-  nameEl.append(name)
-
-  const _priceText = priceText(menu.price)
-  const priceEl = document.createElement("span")
-  priceEl.append(_priceText)
-
-
-  el.append(img, nameEl, priceEl)
-  el.onclick = ev => {
-    orderMenu(name, menu.price)
-  }
-  return el
-}
-
-/** 메뉴 대분류를 추가합니다. */
-function createMenuType(cname, menuType) {
-  const summary = document.createElement("summary")
-  summary.innerText = cname
-  const ul = document.createElement("ul")
-
-  for (const menuName of menuType.order) {
-    const menu = menuType.byKey[menuName]
-    ul.append(createMenu(menuName, menu))
-  }
-
-  const el = document.createElement("details")
-  el.append(summary, ul)
-
-  return el
-}
-
-/** 메뉴를 주문합니다. */
-function orderMenu(name, price) {
+/** 메뉴를 주문합니다.
+ * @param {Object} param0 
+ * @param {string} param0.name 
+ * @param {number} param0.price 
+ */
+// function orderMenu(name, price) {
+function orderMenu({name, price}) {
   if (imageContainer.firstElementChild) imageContainer.removeChild(imageContainer.firstElementChild)
   selectedMenuName.innerText = name
   selectedMenuPrice.innerText = priceText(price)
@@ -159,40 +124,43 @@ function orderMenu(name, price) {
   b.classList.add("Price")
   b.innerText = priceText(price)
 
-  receipt.insertBefore(a, insertBeforeHere)
-  receipt.insertBefore(b, insertBeforeHere)
+  receiptText.append(a, b)
   total += price
 
   totalView.innerText = priceText(total)
   setIntense(total)
 }
 
-
-
+/** 모르겠으니 아무거나 고릅니다. */
 function randomChoice() {
-  if (!udon) return
-  const categoryChoice = Math.random()
-  let categoryKey;
-  if (categoryChoice < 0.6) categoryKey = "우동 & 면류"
-  else if (categoryChoice < 0.9) categoryKey = "덮밥 & 돈까스"
-  else categoryKey = "세트 & 사이드"
+  // if (!udon) return
+  // const categoryChoice = Math.random()
+  // let categoryKey;
+  // if (categoryChoice < 0.6) categoryKey = "우동 & 면류"
+  // else if (categoryChoice < 0.9) categoryKey = "덮밥 & 돈까스"
+  // else categoryKey = "세트 & 사이드"
   
-  const category = udon[categoryKey]
-  const menuChoiceRNG = Math.random()
-  const menuIndex = Math.floor(menuChoiceRNG * category.order.length)
+  // const category = udon[categoryKey]
+  // const menuChoiceRNG = Math.random()
+  // const menuIndex = Math.floor(menuChoiceRNG * category.order.length)
 
-  const menuChoiceKey = category.order[menuIndex]
-  const menuChoice = category.byKey[menuChoiceKey]
-  return [menuChoiceKey, menuChoice]
+  // const menuChoiceKey = category.order[menuIndex]
+  // const menuChoice = category.byKey[menuChoiceKey]
+  const rng = Math.random()
+  const randomIndex = Math.floor(rng * udon2.length)
+
+  const menu = udon2[randomIndex]
+  // return [menuChoiceKey, menuChoice]
+  return [menu.name, menu]
 }
 
 document.querySelector("#RandomChoice").addEventListener("click", e => {
   const [key, menu] = randomChoice()
-  orderMenu(key, menu.price)
+  // orderMenu(key, menu.price)
+  orderMenu(menu)
 })
 
 !((async () => {
-  udon = await fetch('/udon.json').then(res => res.json())
   udon2 = await fetch('/udon2.json').then(res => res.json())
 
   for (const menu of udon2) {
